@@ -3,6 +3,15 @@ TrabBiblioteca
 
 
 
+Requerimentos minimos:
+=====================
+Servidor Web
+PHP 5.3 ou versão superior
+    * short_tags deve estar ativado em seu php.ini
+
+Para construção da biblioteca:
+    * Phing
+    * PHPUnit
 
 
 License
