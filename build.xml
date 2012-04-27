@@ -18,8 +18,11 @@
             <metadata>
                 <element name="version" value="1.0" />
                 <element name="authors">
-                    <element name="John Doe">
-                        <element name="e-mail" value="john@example.com" />
+                    <element name="Rafael">
+                        <element name="e-mail" value="jrtadf arroba gmail.com" />
+                    </element>
+                    <element name="Marcelo">
+                        <element name="e-mail" value="" />
                     </element>
                 </element>
             </metadata>

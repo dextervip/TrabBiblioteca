@@ -19,9 +19,14 @@ Requerimentos minimos:
 =====================
 Servidor Web
 PHP 5.3 ou versão superior
+
     * short_tags deve estar ativado em seu php.ini
+    * PEAR instalado
+    * Em windows, a pasta do php deve estar na variável de ambiente "Path"
+    * A pasta do PEAR deve estar no include_path do php.ini
 
 Para construção da biblioteca:
+
     * Phing
     * PHPUnit
 
