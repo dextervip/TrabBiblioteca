@@ -1,7 +1,19 @@
 TrabBiblioteca
 ==============
 
+# Utilização
 
+Para utilizar a biblioteca, basta incluir-la em seu script php como abaixo:
+
+    include('../build/package.phar');
+
+# Construção
+
+Para construir a biblioteca e gerar o arquivo .phar, navege até a raiz do projeto e rode:
+
+    phing
+
+A biblioteca será construida e estará disponível no diretório /build/package.phar
 
 Requerimentos minimos:
 =====================
