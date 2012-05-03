@@ -49,7 +49,11 @@ class Baralho {
     public function passaCartaInicioFim(){
        $cartaTopo  =  array_shift($this->cartas);
        array_product($this->cartas ,$cartaTopo);
-    }    
+    }   
+    
+    public function getBaralho(){
+        return $this->cartas;
+    }
 }
 
 
