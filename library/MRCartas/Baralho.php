@@ -1,5 +1,5 @@
 <?php
-
+namespace MRCartas;
 //A biblioteca de manipulação de baralho, por padrão o tradicional de 52 cartas sem curingas, 
 // que  deve fornecer uma representação das cartas e funções/métodos/etc para manipulação das cartas
 // São esperadas as

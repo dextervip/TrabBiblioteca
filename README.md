@@ -1,17 +1,33 @@
 TrabBiblioteca
 ==============
 
+# Utilização
 
+Para utilizar a biblioteca, basta incluir-la em seu script php como abaixo:
+
+    include('../build/package.phar');
+
+# Construção
+
+Para construir a biblioteca e gerar o arquivo .phar, navege até a raiz do projeto e rode:
+
+    phing
+
+A biblioteca será construida e estará disponível no diretório /build/package.phar
 
 Requerimentos minimos:
 =====================
 Servidor Web
-PHP 5.3 ou versão superior
-    * short_tags deve estar ativado em seu php.ini
+- PHP 5.3 ou versão superior
+   - short_tags deve estar ativado em seu php.ini
+   - PEAR instalado
+   - Em windows, a pasta do php deve estar na variável de ambiente "Path"
+   - A pasta do PEAR deve estar no include_path do php.ini
 
 Para construção da biblioteca:
-    * Phing
-    * PHPUnit
+
+ - Phing
+ - PHPUnit
 
 
 License

@@ -1,18 +1,14 @@
 <?php
-
 namespace MRCartas;
-
 /**
  * Classe de autoloader para carregamento dinâmico das bibliotecas 
  */
 class Autoloader
 {
-
     public static function load($class)
     {
         include_once $class . '.php';
     }
-
 }
 
 /* Verifica versão do PHP */

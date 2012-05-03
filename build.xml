@@ -1,10 +1,32 @@
 <?xml version="1.0"?>
-
-<project name="TrabBiblioteca" basedir="." default="build">
-	 
-	 
+<project name="TrabBiblioteca" basedir="." default="package">
+  
+    <target name="clean">
+        <delete dir="./build" />
+        <mkdir dir="./build" />
+    </target>
     
-  
-
-  
+    <target name="package" depends="clean">
+        <pharpackage
+            destfile="./build/package.phar"
+            alias="package.phar"
+            basedir="./library"
+            stub="./library/stub.php">
+            <fileset dir="./library">
+                <include name="**/**" />
+            </fileset>
+            <metadata>
+                <element name="version" value="1.0" />
+                <element name="authors">
+                    <element name="Rafael">
+                        <element name="e-mail" value="jrtadf arroba gmail.com" />
+                    </element>
+                    <element name="Marcelo">
+                        <element name="e-mail" value="" />
+                    </element>
+                </element>
+            </metadata>
+        </pharpackage>
+    </target>
+    
 </project>
