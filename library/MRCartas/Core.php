@@ -3,7 +3,7 @@ namespace MRCartas;
 
 class Core
 {
-    const VERSION = '1.0';
+    const VERSION = '1.0.0';
 
     public function getVersion()
     {
