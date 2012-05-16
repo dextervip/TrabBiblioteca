@@ -35,12 +35,16 @@ class index {
        // $baralho->passaCartaInicioFim(); 
         
         
-      //  $baralho->retiraCartaFim();
-      //  $baralho->embaralhaCartas();
-      //    $baralho->addCartaBaralho($carta);
-       // $baralho->retiraCartaTopo();
-       // $baralho->retiraCartaFim();
-        $baralho->divideBaralho();
+      // $baralho->retiraCartaFim();
+      // $baralho->embaralhaCartas();
+      // $baralho->addCartaBaralho($carta);
+       //$baralho->retiraCartaTopo();
+       //$baralho->retiraCartaFim();
+       //$baralho->divideBaralho();
+       //$baralho->divideBaralho();
+       //$baralho->passaCartaInicioFim();
+        
+        
         var_dump($baralho->getBaralho());
     }
 

@@ -23,42 +23,63 @@ class Baralho {
     private $cartas = array();
     private $descarte = array();
     
+    /**
+     * retira a carta do inicio do array
+     * @return Array 
+     */
     public function retiraCartaTopo(){
         return array_shift($this->cartas);
     }
     
+     /**
+     * retira a carta do fim do array
+     * @return Array 
+     */
     public function retiraCartaFim(){
         return array_pop($this->cartas);
     }
     
+    /**
+     * divide o baralho em duas partes, retorna a segunda parte  e atualiza a primeira parte
+     *  @return array 
+     */
     public function divideBaralho(){
       
        $num = count($this->cartas)/2;
-       for($i=0; $i<$num ;$i++) {
-           $metade[] = $this->cartas[$i];
-           $metade[] = $this->cartas[$i];
-           unset($this->cartas[$i]);
-           unset($this->cartas[$i]);
-       }
-        
-        
-        return $this->cartas;
+       
+       $parte1 = array_slice($this->cartas, 0,$num);
+       $parte2 = array_slice($this->cartas, $num);
+       $this->cartas=$parte1;
+       return $parte2;
         
     }
-    
+    /**
+     *metodo para adicionar carta no baralho
+     * @param Carta $carta 
+     */
     public function addCartaBaralho(Carta $carta){
      $this->cartas[] = $carta;   
     }
     
+    /**
+     * metodo para embaralhar a lista de cartas 
+     */
     public function embaralhaCartas(){
         shuffle($this->cartas);
     }
     
+    /**
+     *  metodo para retirar carta do inicio do baralho e move-la para o fim do baralho 
+     */
     public function passaCartaInicioFim(){
        $cartaTopo  =  array_shift($this->cartas);
        array_push($this->cartas, $cartaTopo);
     }   
     
+   /**
+    *metodo para acessar a lista
+    * @return Array 
+    */
     public function getBaralho(){
         return $this->cartas;
     }
