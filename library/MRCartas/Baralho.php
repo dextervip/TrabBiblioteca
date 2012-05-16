@@ -32,9 +32,17 @@ class Baralho {
     }
     
     public function divideBaralho(){
-       $this->descarte  = array_chunk($this->cartas, 2);
-        $this->cartas =$this->descarte[0];
-        return $this->descarte[1];
+      
+       $num = count($this->cartas)/2;
+       for($i=0; $i<$num ;$i++) {
+           $metade[] = $this->cartas[$i];
+           $metade[] = $this->cartas[$i];
+           unset($this->cartas[$i]);
+           unset($this->cartas[$i]);
+       }
+        
+        
+        return $this->cartas;
         
     }
     
@@ -48,7 +56,7 @@ class Baralho {
     
     public function passaCartaInicioFim(){
        $cartaTopo  =  array_shift($this->cartas);
-       array_product($this->cartas ,$cartaTopo);
+       array_push($this->cartas, $cartaTopo);
     }   
     
     public function getBaralho(){

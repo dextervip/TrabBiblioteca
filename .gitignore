@@ -1,3 +1,4 @@
 *.phar
 /nbproject/private/
 /tests/log/
+/ServerUDP/nbproject/private/

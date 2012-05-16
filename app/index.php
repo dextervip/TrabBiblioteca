@@ -1,7 +1,8 @@
 <?php
 
+include '/../build/package.phar';
 /*
- * To change this template, choose Tools | Templates
+ * To change terhis template, choose Tools | Templates
  * and open the template in the editor.
  */
 
@@ -14,41 +15,40 @@ class index {
 
     private $listaCartas = array();
 
-    public function criarArray() {
-
-        for ($index = 0; $index < 51; $index++) {
-            $this->listaCartas[$index . 'teste'] = 'carta ' . $index;
-        }
-    }
+   
 
     public function adicionarCartas() {
 
-        $baralho = new MRCartas\Baralho();
-        $carta = new MRCartas\Carta();
-        $naipes = array('joao', 'pedro');
+        $baralho = new \MRCartas\Baralho();
+        
+        $naipes = array('paus', 'ouro','espada','copas');
+        $valores = array('A','K','Q','J','10','9','8','7','6','5','4','3','2');
         foreach ($naipes as $naipe) {
-            for ($index = 0; $index < 12; $index++) {
+            foreach  ($valores as $value) {
+                $carta = new \MRCartas\Carta();
                 $carta->setNaipe($naipe);
-                $carta->setValor($index);
+                $carta->setValor($value);
                 $baralho->addCartaBaralho($carta);
             }
         }
         
-        var_dump($baralho);
+       // $baralho->passaCartaInicioFim(); 
+        
+        
+      //  $baralho->retiraCartaFim();
+      //  $baralho->embaralhaCartas();
+      //    $baralho->addCartaBaralho($carta);
+       // $baralho->retiraCartaTopo();
+       // $baralho->retiraCartaFim();
+        $baralho->divideBaralho();
+        var_dump($baralho->getBaralho());
     }
 
+    
 }
-defined('APPLICATION_PATH')
-        || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
-
-set_include_path(implode(PATH_SEPARATOR, array(realpath(APPLICATION_PATH . '/../library'),
-            get_include_path(),
-        )));
-
-require_once 'MRCartas/Autoloader.php'; 
 
 $i = new index();
- $i->criarArray();
+ 
  $i->adicionarCartas();
 
 ?>
