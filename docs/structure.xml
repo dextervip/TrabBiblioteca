@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a3" title="">
+  <file path="\app\index.php" hash="2652cd2861e3e11a71082c16cfb48fb2" package="Default">
+    <parse_markers>
+      <error line="16" code="50018">No DocBlock was found for property $listaCartas</error>
+      <error line="20" code="50010">No DocBlock was found for method adicionarCartas()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \app\index.php</error>
+    </parse_markers>
+    <include line="3" type="Include" package="Default">
+      <name>/../build/package.phar</name>
+    </include>
+    <class final="false" abstract="false" namespace="default" line="14" package="Default">
+      <name>index</name>
+      <full_name>\index</full_name>
+      <extends/>
+      <docblock line="9">
+        <description><![CDATA[Description of index]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="9" name="author" description="Marcelo"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$listaCartas</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="20" package="">
+        <name>adicionarCartas</name>
+        <type>function</type>
+      </method>
+    </class>
+  </file>
+  <file path="\library\MRCartas\Autoloader.php" hash="9d3192d5726e1b9c1ce384a29fc99b31" package="Default">
+    <parse_markers>
+      <error line="8" code="50010">No DocBlock was found for method load()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \library\MRCartas\Autoloader.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="MRCartas" line="6" package="Default">
+      <name>Autoloader</name>
+      <full_name>\MRCartas\Autoloader</full_name>
+      <extends/>
+      <docblock line="3">
+        <description><![CDATA[Classe de autoloader para carregamento dinâmico das bibliotecas]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="MRCartas" line="8" package="">
+        <name>load</name>
+        <type>function</type>
+        <argument line="8">
+          <name>$class</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\library\MRCartas\Baralho.php" hash="f6fead27ba1f36a39a5b2fa35904b9db" package="Default">
+    <parse_markers>
+      <error line="23" code="50018">No DocBlock was found for property $cartas</error>
+      <error line="24" code="50018">No DocBlock was found for property $descarte</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \library\MRCartas\Baralho.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="MRCartas" line="18" package="Default">
+      <name>Baralho</name>
+      <full_name>\MRCartas\Baralho</full_name>
+      <extends/>
+      <docblock line="13">
+        <description><![CDATA[Description of Baralho]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="13" name="author" description="Marcelo"/>
+      </docblock>
+      <constant namespace="MRCartas" line="20" package="Default">
+        <name>LIMITE_CARTAS</name>
+        <value><![CDATA[51]]></value>
+      </constant>
+      <property final="false" static="false" visibility="private" line="23" package="Default">
+        <name>$cartas</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="24" package="Default">
+        <name>$descarte</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="30" package="">
+        <name>retiraCartaTopo</name>
+        <type>function</type>
+        <docblock line="26">
+          <description><![CDATA[retira a carta do inicio do array]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="26" name="return" description="" type="Array">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="38" package="">
+        <name>retiraCartaFim</name>
+        <type>function</type>
+        <docblock line="34">
+          <description><![CDATA[retira a carta do fim do array]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="34" name="return" description="" type="Array">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="46" package="">
+        <name>divideBaralho</name>
+        <type>function</type>
+        <docblock line="42">
+          <description><![CDATA[divide o baralho em duas partes, retorna a segunda parte  e atualiza a primeira parte]]></description>
+          <long-description><![CDATA[@return array]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="60" package="">
+        <name>addCartaBaralho</name>
+        <type>function</type>
+        <docblock line="56">
+          <description><![CDATA[metodo para adicionar carta no baralho]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="56" name="param" description="" type="\MRCartas\Carta" variable="$carta">
+            <type by_reference="false">\MRCartas\Carta</type>
+          </tag>
+        </docblock>
+        <argument line="60">
+          <name>$carta</name>
+          <default><![CDATA[]]></default>
+          <type>Carta</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="67" package="">
+        <name>embaralhaCartas</name>
+        <type>function</type>
+        <docblock line="64">
+          <description><![CDATA[metodo para embaralhar a lista de cartas]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="74" package="">
+        <name>passaCartaInicioFim</name>
+        <type>function</type>
+        <docblock line="71">
+          <description><![CDATA[metodo para retirar carta do inicio do baralho e move-la para o fim do baralho]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="83" package="">
+        <name>getBaralho</name>
+        <type>function</type>
+        <docblock line="79">
+          <description><![CDATA[metodo para acessar a lista]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="79" name="return" description="" type="Array">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="\library\MRCartas\Carta.php" hash="c33b090dcd9b5251f9f15a8f62375a88" package="Default">
+    <parse_markers>
+      <error line="15" code="50018">No DocBlock was found for property $naipe</error>
+      <error line="16" code="50018">No DocBlock was found for property $valor</error>
+      <error line="18" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="23" code="50010">No DocBlock was found for method getNaipe()</error>
+      <error line="27" code="50010">No DocBlock was found for method setNaipe()</error>
+      <error line="31" code="50010">No DocBlock was found for method getValor()</error>
+      <error line="35" code="50010">No DocBlock was found for method setValor()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \library\MRCartas\Carta.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="MRCartas" line="13" package="Default">
+      <name>Carta</name>
+      <full_name>\MRCartas\Carta</full_name>
+      <extends/>
+      <docblock line="8">
+        <description><![CDATA[Description of Carta]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="8" name="author" description="Marcelo"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="15" package="Default">
+        <name>$naipe</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$valor</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="18" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <argument line="18">
+          <name>$naipe</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="18">
+          <name>$valor</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="23" package="">
+        <name>getNaipe</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="27" package="">
+        <name>setNaipe</name>
+        <type>function</type>
+        <argument line="27">
+          <name>$naipe</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="31" package="">
+        <name>getValor</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="35" package="">
+        <name>setValor</name>
+        <type>function</type>
+        <argument line="35">
+          <name>$valor</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\library\MRCartas\Core.php" hash="0da20c5fe34ff16e78addb9390c4ffec" package="Default">
+    <parse_markers>
+      <error line="8" code="50010">No DocBlock was found for method getVersion()</error>
+      <error line="4" code="50000">No DocBlock was found for Core</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \library\MRCartas\Core.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="MRCartas" line="4" package="Default">
+      <name>Core</name>
+      <full_name>\MRCartas\Core</full_name>
+      <extends/>
+      <constant namespace="MRCartas" line="6" package="Default">
+        <name>VERSION</name>
+        <value><![CDATA['1.0.0']]></value>
+      </constant>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="MRCartas" line="8" package="">
+        <name>getVersion</name>
+        <type>function</type>
+      </method>
+    </class>
+  </file>
+  <file path="\library\stub.php" hash="d8f11403fb081002593159207dffd042" package="Default">
+    <parse_markers>
+      <error line="5" code="50010">No DocBlock was found for method load()</error>
+      <error line="3" code="50000">No DocBlock was found for Autoloader</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \library\stub.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="3" package="Default">
+      <name>Autoloader</name>
+      <full_name>\Autoloader</full_name>
+      <extends/>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="5" package="">
+        <name>load</name>
+        <type>function</type>
+        <argument line="5">
+          <name>$class</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\public\index.php" hash="bd59eaac0750b64d7b771922e33270be" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file \public\index.php</error>
+    </parse_markers>
+  </file>
+  <file path="\tests\bootstrap.php" hash="7c772648171c0b5e32ac38dbcf0b0fab" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file \tests\bootstrap.php</error>
+    </parse_markers>
+    <include line="10" type="Require Once" package="Default">
+      <name>MRCartas/Autoloader.php</name>
+    </include>
+    <constant namespace="default" line="4" package="Default">
+      <name>APPLICATION_PATH</name>
+      <value><![CDATA[realpath(dirname(__FILE__) . '/../application')]]></value>
+    </constant>
+  </file>
+  <file path="\tests\library\MRCartas\AutoloaderTest.php" hash="95e2ac39ca632a26a7c65792e65049b1" package="Default">
+    <parse_markers>
+      <error line="10" code="50010">No DocBlock was found for method setUp()</error>
+      <error line="15" code="50010">No DocBlock was found for method testAutoloader()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \tests\library\MRCartas\AutoloaderTest.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="7" package="Default">
+      <name>AutoloaderTest</name>
+      <full_name>\AutoloaderTest</full_name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <docblock line="2">
+        <description><![CDATA[Teste unitário para classe de autoloader]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="author" description="Rafael"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="10" package="">
+        <name>setUp</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="15" package="">
+        <name>testAutoloader</name>
+        <type>function</type>
+      </method>
+    </class>
+  </file>
+  <package name="" full_name=""/>
+  <package name="Default" full_name="Default"/>
+  <namespace name="MRCartas" full_name="MRCartas"/>
+  <namespace name="default" full_name="default"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
