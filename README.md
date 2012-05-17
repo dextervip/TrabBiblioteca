@@ -23,11 +23,20 @@ Servidor Web
    - PEAR instalado
    - Em windows, a pasta do php deve estar na variável de ambiente "Path"
    - A pasta do PEAR deve estar no include_path do php.ini
+   - Phing
 
 Para construção da biblioteca:
+ 
+- Alterar configuração do php.ini, deve-se alterar phar.readonly
 
- - Phing
- - PHPUnit
+    phar.readonly = 0
+
+- Instalar o construtor de software Phing:
+
+    pear channel-discover pear.phing.info
+    pear install --alldeps phing/phing
+
+Atenção: Rodar como administrador
 
 
 License
