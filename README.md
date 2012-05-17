@@ -18,12 +18,12 @@ A biblioteca será construida e estará disponível no diretório /build/package
 Requerimentos minimos:
 =====================
 Servidor Web
-- PHP 5.3 ou versão superior
+- PHP 5.3 ou versão superior (apt-get install apache2 php5)
    - short_tags deve estar ativado em seu php.ini
-   - PEAR instalado
+   - PEAR instalado (apt-get install php-pear)
    - Em windows, a pasta do php deve estar na variável de ambiente "Path"
    - A pasta do PEAR deve estar no include_path do php.ini
-   - Phing
+   - Phing (passos abaixo)
 
 Para construção da biblioteca:
  
@@ -32,8 +32,10 @@ Para construção da biblioteca:
         phar.readonly = 0
 
 - Instalar o construtor de software Phing:
-
+        
+        pear upgrade PEAR
         pear channel-discover pear.phing.info
+        pear update-channels
         pear install --alldeps phing/phing
 
 Atenção: Rodar como administrador
