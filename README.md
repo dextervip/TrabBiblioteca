@@ -29,12 +29,12 @@ Para construção da biblioteca:
  
 - Alterar configuração do php.ini, deve-se alterar phar.readonly
 
-    phar.readonly = 0
+        phar.readonly = 0
 
 - Instalar o construtor de software Phing:
 
-    pear channel-discover pear.phing.info
-    pear install --alldeps phing/phing
+        pear channel-discover pear.phing.info
+        pear install --alldeps phing/phing
 
 Atenção: Rodar como administrador
 
