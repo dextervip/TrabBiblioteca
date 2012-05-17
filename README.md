@@ -27,7 +27,16 @@ Servidor Web
 Para construção da biblioteca:
 
  - Phing
- - PHPUnit
+1. Alterar configuração do php.ini, deve-se alterar phar.readonly
+
+    phar.readonly = 0
+
+2. Instalar o construtor de software Phing:
+
+    pear channel-discover pear.phing.info
+    pear install --alldeps phing/phing
+
+Atenção: Rodar como administrador
 
 
 License
