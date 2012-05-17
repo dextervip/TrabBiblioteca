@@ -31,21 +31,37 @@ class index {
                 $baralho->addCartaBaralho($carta);
             }
         }
-        
-       // $baralho->passaCartaInicioFim(); 
-        
-        
-      // $baralho->retiraCartaFim();
-      // $baralho->embaralhaCartas();
-      // $baralho->addCartaBaralho($carta);
-       //$baralho->retiraCartaTopo();
-       //$baralho->retiraCartaFim();
-       //$baralho->divideBaralho();
-       //$baralho->divideBaralho();
-       //$baralho->passaCartaInicioFim();
-        
-        
+        echo "BARALHO --------------------------------------------------------";
         var_dump($baralho->getBaralho());
+        
+        echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</br>";
+        
+        echo "TIRANDO CARTA DO INICIO PASSANDO PARA O FIM";
+        $baralho->passaCartaInicioFim();
+        var_dump($baralho->getBaralho());
+        
+        echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</br>";
+        echo "RETIRANDO CARTA DO FIM DO BARALHO";
+        $baralho->retiraCartaFim();
+        var_dump($baralho->getBaralho());
+        
+        echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</br>";
+        echo "EMBARALHANDO A CARTA";
+        $baralho->embaralhaCartas();
+        var_dump($baralho->getBaralho());
+        
+        echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</br>";
+        echo "RETIRANDO CARTA DO TOPO DO BARALHO";
+        $baralho->retiraCartaTopo();
+        var_dump($baralho->getBaralho());
+        
+        echo "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</br>";
+        echo "DIVIDIR BARALHO EM 2";
+        $baralho->divideBaralho();
+        var_dump($baralho->getBaralho());
+      
+        
+       
     }
 
     
