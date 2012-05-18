@@ -35,9 +35,6 @@ class Carta {
     public function setValor($valor) {
         $this->valor = $valor;
     }
-
-      
-
 }
 
-?>
+
