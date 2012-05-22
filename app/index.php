@@ -9,7 +9,6 @@ include '/../build/package.phar';
 /**
  * Description of index
  *
- * @author Marcelo
  */
 class index {
 
@@ -67,8 +66,5 @@ class index {
     
 }
 
-$i = new index();
- 
- $i->adicionarCartas();
 
-?>
+
