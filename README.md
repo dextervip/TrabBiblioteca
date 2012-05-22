@@ -41,6 +41,14 @@ Para construção da biblioteca:
 Atenção: Rodar como administrador
 
 
+Uso 
+===
+
+Para a utilização da aplicaçao de demonstração, faça um clone para a pasta raiz do seu servidor e chame a URL em seu navegador:
+
+    http://localhost/pastaDoClone/public/index.php
+
+
 License
 ========================================
 Biblioteca para manipulação de cartas
