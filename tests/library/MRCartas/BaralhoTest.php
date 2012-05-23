@@ -39,6 +39,12 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
      */
     public function testAddCartaBaralho()
     {
+        $this->popularBaralho();
+        $this->assertSame($this->baralho->getBaralho()[0]->getNaipe(), 'paus');
+        $this->assertSame($this->baralho->count(), 52);
+    }
+    
+    private function popularBaralho(){
         $naipes = array('paus', 'ouro','espada','copas');
         $valores = array('A','K','Q','J','10','9','8','7','6','5','4','3','2');
         foreach ($naipes as $naipe) {
@@ -49,7 +55,15 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
                 $this->baralho->addCartaBaralho($carta);
             }
         }
-        $this->assertSame($this->baralho->getBaralho()[0]->getNaipe(), 'paus');
+    }
+    
+    /**
+     * @covers MRCartas\Baralho::count
+     * @author Rafael
+     */
+    public function testCount()
+    {
+        $this->popularBaralho();
         $this->assertSame($this->baralho->count(), 52);
     }
 
