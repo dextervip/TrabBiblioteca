@@ -12,7 +12,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     /**
      * @var Baralho
      */
-    protected $object;
+    protected $baralho;
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -20,7 +20,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->object = new Baralho;
+        $this->baralho = new Baralho;
     }
 
     /**
@@ -30,6 +30,27 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         
+    }
+    
+    /**
+     * @covers MRCartas\Baralho::addCartaBaralho
+     * @todo Implement testAddCartaBaralho().
+     * @author Rafael
+     */
+    public function testAddCartaBaralho()
+    {
+        $naipes = array('paus', 'ouro','espada','copas');
+        $valores = array('A','K','Q','J','10','9','8','7','6','5','4','3','2');
+        foreach ($naipes as $naipe) {
+            foreach  ($valores as $value) {
+                $carta = new \MRCartas\Carta();
+                $carta->setNaipe($naipe);
+                $carta->setValor($value);
+                $this->baralho->addCartaBaralho($carta);
+            }
+        }
+        $this->assertSame($this->baralho->getBaralho()[0]->getNaipe(), 'paus');
+        $this->assertSame($this->baralho->count(), 52);
     }
 
     /**
@@ -71,18 +92,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @covers MRCartas\Baralho::addCartaBaralho
-     * @todo Implement testAddCartaBaralho().
-     * @author
-     */
-    public function testAddCartaBaralho()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
+    
 
     /**
      * @covers MRCartas\Baralho::embaralhaCartas

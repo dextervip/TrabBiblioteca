@@ -20,7 +20,7 @@ namespace MRCartas;
 class Baralho
 {
 
-    const LIMITE_CARTAS = 51;
+    const LIMITE_CARTAS = 52;
 
     private $cartas = array();
     private $descarte = array();
@@ -106,6 +106,14 @@ class Baralho
            throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::LIMITE_CARTAS_EXCEDIDO); 
         }
         $this->cartas = $cartas;
+    }
+    
+    /**
+     * Returna o número de cartas no baralho
+     * @return int
+     */
+    public function count(){
+        return count($this->cartas);
     }
 
 
