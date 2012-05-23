@@ -35,6 +35,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers MRCartas\Baralho::retiraCartaTopo
      * @todo Implement testRetiraCartaTopo().
+     * @author Bruno
      */
     public function testRetiraCartaTopo()
     {
@@ -47,6 +48,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers MRCartas\Baralho::retiraCartaFim
      * @todo Implement testRetiraCartaFim().
+     * @author Lucas
      */
     public function testRetiraCartaFim()
     {
@@ -59,6 +61,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers MRCartas\Baralho::divideBaralho
      * @todo Implement testDivideBaralho().
+     * @author
      */
     public function testDivideBaralho()
     {
@@ -71,6 +74,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers MRCartas\Baralho::addCartaBaralho
      * @todo Implement testAddCartaBaralho().
+     * @author
      */
     public function testAddCartaBaralho()
     {
@@ -83,6 +87,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers MRCartas\Baralho::embaralhaCartas
      * @todo Implement testEmbaralhaCartas().
+     * @author
      */
     public function testEmbaralhaCartas()
     {
@@ -95,6 +100,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers MRCartas\Baralho::passaCartaInicioFim
      * @todo Implement testPassaCartaInicioFim().
+     * @author
      */
     public function testPassaCartaInicioFim()
     {
@@ -107,6 +113,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers MRCartas\Baralho::getBaralho
      * @todo Implement testGetBaralho().
+     * @author
      */
     public function testGetBaralho()
     {
@@ -119,6 +126,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers MRCartas\Baralho::setCartas
      * @todo Implement testSetCartas().
+     * @author
      */
     public function testSetCartas()
     {
