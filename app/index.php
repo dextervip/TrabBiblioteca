@@ -1,11 +1,6 @@
 <?php
 
 include '/../build/package.phar';
-/*
- * To change terhis template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of index
  *
