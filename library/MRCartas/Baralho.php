@@ -31,7 +31,7 @@ class Baralho
      */
     public function retiraCartaTopo()
     {
-        return array_shift($this->cartas);
+        return array_pop($this->cartas);
     }
 
     /**
@@ -40,7 +40,7 @@ class Baralho
      */
     public function retiraCartaFim()
     {
-        return array_pop($this->cartas);
+        return array_shift($this->cartas);
     }
 
     /**
