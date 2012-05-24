@@ -41,7 +41,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase
     {
         $this->popularBaralho();
         $this->assertSame($this->baralho->getBaralho()[0]->getNaipe(), 'paus');
-        $this->assertSame($this->baralho->count(), 52);
+        $this->assertSame($this->baralho->getBaralho()[$this->baralho->count() - 1]->getNaipe(), 'copas');
     }
     
     private function popularBaralho(){
