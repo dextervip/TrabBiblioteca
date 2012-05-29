@@ -103,6 +103,10 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * Testa o método divideBaralho() presente na classee Bararalho.php
+     * Este método é responsavel por dividir o baralho em duas partes iguais
+     * e fornecer um retorno contendo a segunda parte do baralho,
+     * a qual sera manipulada posteriormente 
+     * e atualize a primeira parte do mesmo.
      * 
      * @covers MRCartas\Baralho::divideBaralho
      * @todo Implement testDivideBaralho().
