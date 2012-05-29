@@ -107,7 +107,29 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * @author Juliano R
      */
     public function testDivideBaralho() {
-        // Em construção...
+        /**
+         * Em construção...
+         */
+        $this->popularBaralho();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 //        $this->markTestIncomplete(
 //                'This test has not been implemented yet.'
 //        );
