@@ -16,6 +16,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     protected $baralho;
 
     /**
+     * 
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
@@ -118,13 +119,19 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
          */
         $this->popularBaralho();
         $meioBaralho = $this->baralho->divideBaralho();
-        //$numCartasMeioBaralho = $this->$meioBaralho;
+        
+        /**
+         *Verifica o tamanho do retorno do método divideBaralho. 
+         */
+        $numCartasMeioBaralho = strlen($meioBaralho);
 
         /**
          * Verifica se o tamanho da parte 2 que é retornada 
          * é realmente 26(o meio do baralho). 
          */
-        $this->assertSame($this->$meioBaralho, 26);
+        $this->assertSame($this->$numCartasMeioBaralho, 26);
+        //$this->assertSame((($this->$numCartasMeioBaralho)+1), 26);
+        
 
 
 
