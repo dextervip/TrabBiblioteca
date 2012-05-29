@@ -119,19 +119,21 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
          */
         $this->popularBaralho();
         $meioBaralho = $this->baralho->divideBaralho();
-        
+
         /**
-         *Verifica o tamanho do retorno do método divideBaralho. 
+         * Verifica o tamanho do retorno do método divideBaralho. 
          */
         $numCartasMeioBaralho = strlen($meioBaralho);
+        //$numCartasMeioBaralho = (strlen($meioBaralho)+1);
 
         /**
          * Verifica se o tamanho da parte 2 que é retornada 
          * é realmente 26(o meio do baralho). 
          */
         $this->assertSame($this->$numCartasMeioBaralho, 26);
+
         //$this->assertSame((($this->$numCartasMeioBaralho)+1), 26);
-        
+
 
 
 
