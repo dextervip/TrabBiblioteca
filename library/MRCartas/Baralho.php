@@ -17,8 +17,7 @@ namespace MRCartas;
  *
  * @author Marcelo
  */
-class Baralho
-{
+class Baralho {
 
     const LIMITE_CARTAS = 52;
 
@@ -29,8 +28,7 @@ class Baralho
      * retira a carta do inicio do array
      * @return Array 
      */
-    public function retiraCartaTopo()
-    {
+    public function retiraCartaTopo() {
         return array_pop($this->cartas);
     }
 
@@ -38,8 +36,7 @@ class Baralho
      * retira a carta do fim do array
      * @return Array 
      */
-    public function retiraCartaFim()
-    {
+    public function retiraCartaFim() {
         return array_shift($this->cartas);
     }
 
@@ -47,8 +44,7 @@ class Baralho
      * divide o baralho em duas partes, retorna a segunda parte  e atualiza a primeira parte
      *  @return array 
      */
-    public function divideBaralho()
-    {
+    public function divideBaralho() {
         $num = count($this->cartas) / 2;
 
         $parte1 = array_slice($this->cartas, 0, $num);
@@ -61,10 +57,9 @@ class Baralho
      * metodo para adicionar carta no baralho
      * @param Carta $carta 
      */
-    public function addCartaBaralho(\MRCartas\Carta $carta)
-    {
+    public function addCartaBaralho(\MRCartas\Carta $carta) {
         if (count($this->cartas) > self::LIMITE_CARTAS) {
-           throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::LIMITE_CARTAS_EXCEDIDO); 
+            throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::LIMITE_CARTAS_EXCEDIDO);
         }
         $this->cartas[] = $carta;
     }
@@ -72,16 +67,14 @@ class Baralho
     /**
      * metodo para embaralhar a lista de cartas 
      */
-    public function embaralhaCartas()
-    {
+    public function embaralhaCartas() {
         shuffle($this->cartas);
     }
 
     /**
      *  metodo para retirar carta do inicio do baralho e move-la para o fim do baralho 
      */
-    public function passaCartaInicioFim()
-    {
+    public function passaCartaInicioFim() {
         $cartaTopo = array_shift($this->cartas);
         array_push($this->cartas, $cartaTopo);
     }
@@ -90,33 +83,29 @@ class Baralho
      * metodo para acessar a lista
      * @return Array 
      */
-    public function getBaralho()
-    {
+    public function getBaralho() {
         return $this->cartas;
     }
-    
-    public function setCartas(array $cartas)
-    {
-        foreach ($cartas as $carta){
-            if($carta instanceof \MRCartas\Baralho == false){
-                throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::PARAMETRO_INVALIDO); 
+
+    public function setCartas(array $cartas) {
+        foreach ($cartas as $carta) {
+            if ($carta instanceof \MRCartas\Baralho == false) {
+                throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::PARAMETRO_INVALIDO);
             }
         }
         if (count($this->cartas) > self::LIMITE_CARTAS) {
-           throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::LIMITE_CARTAS_EXCEDIDO); 
+            throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::LIMITE_CARTAS_EXCEDIDO);
         }
         $this->cartas = $cartas;
     }
-    
+
     /**
      * Returna o número de cartas no baralho
      * @return int
      */
-    public function count(){
+    public function count() {
         return count($this->cartas);
     }
-
-
 
 }
 

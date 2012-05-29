@@ -1,5 +1,7 @@
 <?php
+
 namespace MRCartas;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -11,15 +13,15 @@ namespace MRCartas;
  * @author Marcelo
  */
 class Carta {
-    
+
     private $naipe;
     private $valor;
-    
-     function __construct($naipe =null, $valor=null) {
+
+    function __construct($naipe = null, $valor = null) {
         $this->naipe = $naipe;
         $this->valor = $valor;
     }
-    
+
     public function getNaipe() {
         return $this->naipe;
     }
@@ -35,6 +37,6 @@ class Carta {
     public function setValor($valor) {
         $this->valor = $valor;
     }
-}
 
+}
 
