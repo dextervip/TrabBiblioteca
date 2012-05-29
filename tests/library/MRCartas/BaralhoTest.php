@@ -130,8 +130,9 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
          * é realmente 26(o meio do baralho). 
          */
         $this->assertSame($this->$numCartasMeioBaralho, 26);
+
         //$this->assertSame((($this->$numCartasMeioBaralho)+1), 26);
-        
+
 
 
 
