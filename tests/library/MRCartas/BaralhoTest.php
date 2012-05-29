@@ -102,7 +102,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     /**
      * @covers MRCartas\Baralho::divideBaralho
      * @todo Implement testDivideBaralho().
-     * @author
+     * @author Juliano R
      */
     public function testDivideBaralho() {
         // Remove the following lines when you implement this test.
