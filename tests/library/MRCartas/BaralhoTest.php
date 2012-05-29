@@ -122,6 +122,12 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
          */
         $this->assertSame($this->$meioBaralho, 26);
 
+        /**
+         * Verifica se o tamanho da parte 2 que é retornada 
+         * é realmente 26(o meio do baralho). 
+         */
+        $this->assertSame($this->$meioBaralho, 26);
+
 
 
 
