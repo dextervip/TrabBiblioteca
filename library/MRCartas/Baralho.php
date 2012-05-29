@@ -41,7 +41,9 @@ class Baralho {
     }
 
     /**
-     * divide o baralho em duas partes, retorna a segunda parte  e atualiza a primeira parte
+     * Método que divide o baralho em duas partes, 
+     * retorna a segunda parte e atualiza a primeira parte
+     * 
      *  @return array 
      */
     public function divideBaralho() {
