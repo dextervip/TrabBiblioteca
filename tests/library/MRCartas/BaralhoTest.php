@@ -111,25 +111,31 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
          * Em construção...
          */
         $this->popularBaralho();
+        $meioBaralho = $this->baralho->divideBaralho();
+        //$numCartasMeioBaralho = $this->$meioBaralho;
+
+
+        $this->assertSame($this->$meioBaralho, 26);
         
         
         
+
+
+
+
+
+
+
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
 //        $this->markTestIncomplete(
 //                'This test has not been implemented yet.'
 //        );
