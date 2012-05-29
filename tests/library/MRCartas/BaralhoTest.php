@@ -105,7 +105,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * @author Juliano R
      */
     public function testDivideBaralho() {
-        // Remove the following lines when you implement this test.
+        // Em construção...
         $this->markTestIncomplete(
                 'This test has not been implemented yet.'
         );
