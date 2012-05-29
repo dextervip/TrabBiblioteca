@@ -115,10 +115,10 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         //$numCartasMeioBaralho = $this->$meioBaralho;
 
 
+
         $this->assertSame($this->$meioBaralho, 26);
         
         
-        
 
 
 
@@ -126,7 +126,8 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
 
 
 
-        
+
+
 
 
 
