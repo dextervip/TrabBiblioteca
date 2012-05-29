@@ -106,9 +106,9 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      */
     public function testDivideBaralho() {
         // Em construção...
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+//        $this->markTestIncomplete(
+//                'This test has not been implemented yet.'
+//        );
     }
 
     /**
