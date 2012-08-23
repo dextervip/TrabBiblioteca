@@ -123,7 +123,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         /**
          * Verifica o tamanho do retorno do método divideBaralho. 
          */
-        $numCartasMeioBaralho = strlen($meioBaralho);
+        $numCartasMeioBaralho = count($meioBaralho);
         //$numCartasMeioBaralho = (strlen($meioBaralho)+1);
 
         /**
