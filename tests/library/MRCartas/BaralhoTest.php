@@ -79,6 +79,8 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
+     * Testa se o metodo RetiraCartaTopo() pega a carta certa
+     *
      * @covers MRCartas\Baralho::retiraCartaTopo
      * @todo Implement testRetiraCartaTopo().
      * @author Bruno
@@ -91,6 +93,8 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
+     * Testa se o metodo RetiraCartaFim() retira a carta desejada corretamente do fim do baralho
+     *
      * @covers MRCartas\Baralho::retiraCartaFim
      * @todo Implement testRetiraCartaFim().
      * @author Bruno
