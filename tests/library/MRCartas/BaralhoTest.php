@@ -93,12 +93,13 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     /**
      * @covers MRCartas\Baralho::retiraCartaFim
      * @todo Implement testRetiraCartaFim().
-     * @author Lucas
+     * @author Bruno
      */
     public function testRetiraCartaFim() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
+        $this->popularBaralho();
+        $cartaRemovida = $this->baralho->retiraCartaFim();
+        $this->assertSame($cartaRemovida->getNaipe(), 'paus');
+        $this->assertSame($cartaRemovida->getValor(), '5');
         );
     }
 
