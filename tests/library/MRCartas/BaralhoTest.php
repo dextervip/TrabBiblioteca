@@ -79,6 +79,8 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
+     * Testa se o metodo RetiraCartaTopo() pega a carta certa
+     *
      * @covers MRCartas\Baralho::retiraCartaTopo
      * @todo Implement testRetiraCartaTopo().
      * @author Bruno
@@ -91,14 +93,17 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
+     * Testa se o metodo RetiraCartaFim() retira a carta desejada corretamente do fim do baralho
+     *
      * @covers MRCartas\Baralho::retiraCartaFim
      * @todo Implement testRetiraCartaFim().
-     * @author Lucas
+     * @author Bruno
      */
     public function testRetiraCartaFim() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
+        $this->popularBaralho();
+        $cartaRemovida = $this->baralho->retiraCartaFim();
+        $this->assertSame($cartaRemovida->getNaipe(), 'paus');
+        $this->assertSame($cartaRemovida->getValor(), '5');
         );
     }
 
@@ -172,27 +177,54 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
+     * Testa se a carta passa do início do monte para o fim.
+     * O teste ocorre com o baralho vazio, o baralho com apenas uma carta e o 
+     * baralho com duas cartas.
      * @covers MRCartas\Baralho::passaCartaInicioFim
      * @todo Implement testPassaCartaInicioFim().
-     * @author
+     * @author thiago
      */
     public function testPassaCartaInicioFim() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $baralho = new \MRCartas\Baralho();
+        $baralho->passaCartaInicioFim();
+        $this->assertEquals($baralho->getBaralho(), array());
+        
+        $asPaus = new \MRCartas\Carta('A', 'paus');
+        $baralho->addCartaBaralho($asPaus);
+        $baralho->passaCartaInicioFim();
+        $this->assertEquals($baralho->getBaralho()[0], $asPaus);
+        
+        $dezOuro = new \MRCartas\Carta('10', 'ouro');
+        $baralho->addCartaBaralho($dezOuro);
+        $baralho->passaCartaInicioFim();
+        $this->assertEquals($baralho->getBaralho()[1], $asPaus);
+        $this->assertEquals($baralho->getBaralho()[0], $dezOuro);
     }
 
     /**
+     * Testa se são retornadas as cartas do baralho corretamente.
      * @covers MRCartas\Baralho::getBaralho
      * @todo Implement testGetBaralho().
-     * @author
+     * @author thiago
      */
     public function testGetBaralho() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $baralho = new \MRCartas\Baralho();
+        $cartasAdd = array();
+        $i = 0;
+        $naipes = array('paus', 'ouro', 'espada', 'copas');
+        $valores = array('A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2');
+        foreach ($naipes as $naipe) {
+            foreach ($valores as $value) {
+                $carta = new \MRCartas\Carta();
+                $carta->setNaipe($naipe);
+                $carta->setValor($value);
+                $baralho->addCartaBaralho($carta);
+                $cartasAdd[$i] = $carta;
+                $i++;
+                
+                $this->assertEquals($baralho->getBaralho(), $cartasAdd);
+            }
+        }
     }
 
     /**
