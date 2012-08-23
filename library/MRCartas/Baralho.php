@@ -87,10 +87,10 @@ class Baralho {
      * metodo para acessar a lista
      * @return Array 
      */
-    public function getBaralho() {
+    public function getCartas() {
         return $this->cartas;
     }
-
+    
     public function setCartas(array $cartas) {
         foreach ($cartas as $carta) {
             if ($carta instanceof \MRCartas\Baralho == false) {
