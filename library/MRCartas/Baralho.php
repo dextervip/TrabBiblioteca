@@ -78,7 +78,9 @@ class Baralho {
      */
     public function passaCartaInicioFim() {
         $cartaTopo = array_shift($this->cartas);
-        array_push($this->cartas, $cartaTopo);
+        if ($cartaTopo != null) {
+            array_push($this->cartas, $cartaTopo);
+        }
     }
 
     /**
