@@ -137,31 +137,11 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
          */
         $this->assertSame($this->$numCartasMeioBaralho, 26);
 
-        //$this->assertSame((($this->$numCartasMeioBaralho)+1), 26);
+        $this->assertSame((($this->$numCartasMeioBaralho) + 1), 26);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        $this->markTestIncomplete(
-//                'This test has not been implemented yet.'
-//        );
+        $this->markTestIncomplete(
+                'This test has not been implemented yet.'
+        );
     }
 
     /**
@@ -188,12 +168,12 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         $baralho = new \MRCartas\Baralho();
         $baralho->passaCartaInicioFim();
         $this->assertEquals($baralho->getBaralho(), array());
-        
+
         $asPaus = new \MRCartas\Carta('A', 'paus');
         $baralho->addCartaBaralho($asPaus);
         $baralho->passaCartaInicioFim();
         $this->assertEquals($baralho->getBaralho()[0], $asPaus);
-        
+
         $dezOuro = new \MRCartas\Carta('10', 'ouro');
         $baralho->addCartaBaralho($dezOuro);
         $baralho->passaCartaInicioFim();
@@ -221,7 +201,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
                 $baralho->addCartaBaralho($carta);
                 $cartasAdd[$i] = $carta;
                 $i++;
-                
+
                 $this->assertEquals($baralho->getBaralho(), $cartasAdd);
             }
         }
