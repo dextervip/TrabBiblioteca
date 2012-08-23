@@ -104,7 +104,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         $cartaRemovida = $this->baralho->retiraCartaFim();
         $this->assertSame($cartaRemovida->getNaipe(), 'paus');
         $this->assertSame($cartaRemovida->getValor(), '5');
-        );
     }
 
     /**
