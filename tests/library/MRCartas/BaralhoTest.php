@@ -116,12 +116,10 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * 
      * @covers MRCartas\Baralho::divideBaralho
      * @todo Implement testDivideBaralho().
-     * @author Juliano R
+     * @author Juliano
      */
     public function testDivideBaralho() {
-        /**
-         * Em construção...
-         */
+
         $this->popularBaralho();
         $meioBaralho = $this->baralho->divideBaralho();
 
@@ -135,13 +133,9 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
          * Verifica se o tamanho da parte 2 que é retornada 
          * é realmente 26(o meio do baralho). 
          */
-        $this->assertSame($this->$numCartasMeioBaralho, 26);
+        $this->assertSame($numCartasMeioBaralho, 26);
 
-        $this->assertSame((($this->$numCartasMeioBaralho) + 1), 26);
-
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertSame((($numCartasMeioBaralho) + 1), 26);
     }
 
     /**
