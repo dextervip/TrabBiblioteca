@@ -35,9 +35,7 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
      */
     public function testGetNaipe() {
         // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->fail('Não implementado ainda');
     }
 
     /**
@@ -46,9 +44,7 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
      */
     public function testSetNaipe() {
         // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->fail('Não implementado ainda');
     }
 
     /**
@@ -57,9 +53,7 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
      */
     public function testGetValor() {
         // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->fail('Não implementado ainda');
     }
 
     /**
@@ -68,9 +62,7 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
      */
     public function testSetValor() {
         // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->fail('Não implementado ainda');
     }
 
 }

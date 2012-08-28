@@ -99,7 +99,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         $this->popularBaralho();
         $cartaRemovida = $this->baralho->retiraCartaFim();
         $this->assertSame($cartaRemovida->getNaipe(), 'paus');
-        $this->assertSame($cartaRemovida->getValor(), '5');
+        $this->assertSame($cartaRemovida->getValor(), '2');
     }
 
     /**
@@ -121,7 +121,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
          * Verifica o tamanho do retorno do método divideBaralho. 
          */
         $numCartasMeioBaralho = count($meioBaralho);
-        //$numCartasMeioBaralho = (strlen($meioBaralho)+1);
 
         /**
          * Verifica se o tamanho da parte 2 que é retornada 
@@ -137,9 +136,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      */
     public function testEmbaralhaCartas() {
         // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->fail('Não implementado ainda');
     }
 
     /**
@@ -198,9 +195,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      */
     public function testSetCartas() {
         // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->fail('Não implementado ainda');
     }
 
 }
