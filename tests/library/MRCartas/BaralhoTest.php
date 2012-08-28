@@ -120,6 +120,10 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     public function testDivideBaralho() {
 
         $this->popularBaralho();
+
+        /**
+         * Armazena na variável '$meioBaralho' o retorno do método 'divideBaralho()'.
+         */
         $meioBaralho = $this->baralho->divideBaralho();
 
         /**

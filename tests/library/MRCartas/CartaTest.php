@@ -37,10 +37,16 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
     public function testGetNaipe() {
 
         /**
-         * Em construção...
+         * Chama a variável 'object' que é um objeto da classe
+         * Carta.php, acessa o método 'setNaipe' 
+         * e define por paramêtro a string(naipe) de 'paus'.
          */
         $this->object->setNaipe('paus');
-        $this->assertSame($this->object->getBaralho()[0]->getNaipe(), 'paus');
+
+        /**
+         * Testa se a string(naipe) retornada pelo método invocado 'getNaipe()' é 'paus'.
+         */
+        $this->assertSame($this->object->getNaipe(), 'paus');
     }
 
     /**
