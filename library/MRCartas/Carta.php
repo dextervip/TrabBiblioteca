@@ -32,6 +32,10 @@ class Carta {
     public function setValor($valor) {
         $this->valor = $valor;
     }
+    
+    public function toString() {
+        return $this->getValor() . ' de ' . $this->getNaipe();
+    }
 
 }
 

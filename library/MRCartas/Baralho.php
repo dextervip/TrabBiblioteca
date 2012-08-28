@@ -119,7 +119,7 @@ class Baralho {
         $valCarta = '';
         /* @var $carta \MRCartas\Carta */
         foreach ($this->cartas as $carta) {
-            $valCarta .= '<br />' . $carta->getValor() . ' ' . $carta->getNaipe();
+            $valCarta .= $carta->toString() . '<br />';
         }
         return $valCarta;
     }
