@@ -99,7 +99,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         $this->popularBaralho();
         $cartaRemovida = $this->baralho->retiraCartaFim();
         $this->assertSame($cartaRemovida->getNaipe(), 'paus');
-        $this->assertSame($cartaRemovida->getValor(), '2');
+        $this->assertSame($cartaRemovida->getValor(), 'A');
     }
 
     /**
