@@ -84,7 +84,7 @@ class Baralho {
     }
 
     /**
-     * metodo para acessar a lista
+     * Método para acessar a lista
      * @return Array 
      */
     public function getBaralho() {
