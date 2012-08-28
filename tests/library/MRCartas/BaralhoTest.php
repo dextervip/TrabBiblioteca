@@ -79,10 +79,10 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Testa se o metodo RetiraCartaTopo() pega a carta certa
+     * Testa se o metodo RetiraCartaInicio() pega a primeira carta adicionada no array
      *
-     * @covers MRCartas\Baralho::retiraCartaTopo
-     * @todo Implement testRetiraCartaTopo().
+     * @covers MRCartas\Baralho::retiraCartaInicio
+     * @todo Implement testRetiraCartaInicio().
      * @author Bruno
      */
     public function testRetiraCartaInicio() {
