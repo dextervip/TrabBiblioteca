@@ -87,7 +87,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      */
     public function testRetiraCartaInicio() {
         $this->popularBaralho();
-        $cartaRemovida = $this->baralho->retiraCartaTopo();
+        $cartaRemovida = $this->baralho->retiraCartaInicio();
         $this->assertSame($cartaRemovida->getNaipe(), 'paus');
         $this->assertSame($cartaRemovida->getValor(), 'A');
     }
