@@ -34,6 +34,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers MRCartas\Baralho::addCartaBaralho
+     * @todo Implement testAddCartaBaralho().
      * @author Rafael
      */
     public function testAddCartaBaralho() {
@@ -45,6 +46,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     /**
      * Testa o limite de cartas do baralho, se for excedido será lançada uma exceção
      * @covers MRCartas\Baralho::addCartaBaralho
+     * @todo Implement testAddCartaBaralho().
      * @author Rafael
      * @expectedException MRCartas\BaralhoException
      */
@@ -77,29 +79,31 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Testa se o metodo RetiraCartaTopo() pega a carta certa
+     * Testa se o metodo RetiraCartaInicio() pega a primeira carta adicionada no array
      *
-     * @covers MRCartas\Baralho::retiraCartaTopo
+     * @covers MRCartas\Baralho::retiraCartaInicio
+     * @todo Implement testRetiraCartaInicio().
      * @author Bruno
      */
-    public function testRetiraCartaTopo() {
+    public function testRetiraCartaInicio() {
         $this->popularBaralho();
-        $cartaRemovida = $this->baralho->retiraCartaTopo();
-        $this->assertSame($cartaRemovida->getNaipe(), 'copas');
-        $this->assertSame($cartaRemovida->getValor(), '2');
+        $cartaRemovida = $this->baralho->retiraCartaInicio();
+        $this->assertSame($cartaRemovida->getNaipe(), 'paus');
+        $this->assertSame($cartaRemovida->getValor(), 'A');
     }
 
     /**
      * Testa se o metodo RetiraCartaFim() retira a carta desejada corretamente do fim do baralho
      *
      * @covers MRCartas\Baralho::retiraCartaFim
+     * @todo Implement testRetiraCartaFim().
      * @author Bruno
      */
     public function testRetiraCartaFim() {
         $this->popularBaralho();
         $cartaRemovida = $this->baralho->retiraCartaFim();
-        $this->assertSame($cartaRemovida->getNaipe(), 'paus');
-        $this->assertSame($cartaRemovida->getValor(), 'A');
+        $this->assertSame($cartaRemovida->getNaipe(), 'copas');
+        $this->assertSame($cartaRemovida->getValor(), '2');
     }
 
     /**
@@ -110,6 +114,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * e atualize a primeira parte do mesmo.
      * 
      * @covers MRCartas\Baralho::divideBaralho
+     * @todo Implement testDivideBaralho().
      * @author Juliano
      */
     public function testDivideBaralho() {
@@ -144,6 +149,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * O teste ocorre com o baralho vazio, o baralho com apenas uma carta e o 
      * baralho com duas cartas.
      * @covers MRCartas\Baralho::passaCartaInicioFim
+     * @todo Implement testPassaCartaInicioFim().
      * @author thiago
      */
     public function testPassaCartaInicioFim() {
@@ -166,6 +172,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     /**
      * Testa se são retornadas as cartas do baralho corretamente.
      * @covers MRCartas\Baralho::getBaralho
+     * @todo Implement testGetBaralho().
      * @author thiago
      */
     public function testGetBaralho() {

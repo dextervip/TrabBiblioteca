@@ -28,8 +28,8 @@ class Baralho {
      * retira a carta do inicio do array
      * @return Array 
      */
-    public function retiraCartaTopo() {
-        return array_pop($this->cartas);
+    public function retiraCartaInicio() {
+        return array_shift($this->cartas);
     }
 
     /**
@@ -37,7 +37,7 @@ class Baralho {
      * @return Array 
      */
     public function retiraCartaFim() {
-        return array_shift($this->cartas);
+        return array_pop($this->cartas);
     }
 
     /**
@@ -84,7 +84,7 @@ class Baralho {
     }
 
     /**
-     * metodo para acessar a lista
+     * Método para acessar a lista
      * @return Array 
      */
     public function getBaralho() {
