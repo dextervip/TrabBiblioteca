@@ -32,8 +32,15 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
     /**
      * @covers MRCartas\Carta::getNaipe
      * @todo Implement testGetNaipe().
+     * @author Juliano R
      */
     public function testGetNaipe() {
+        
+        /**
+         * Em construção...
+         */
+        
+        
         // Remove the following lines when you implement this test.
         $this->fail('Não implementado ainda');
     }
