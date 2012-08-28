@@ -88,8 +88,8 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     public function testRetiraCartaTopo() {
         $this->popularBaralho();
         $cartaRemovida = $this->baralho->retiraCartaTopo();
-        $this->assertSame($cartaRemovida->getNaipe(), 'copas');
-        $this->assertSame($cartaRemovida->getValor(), '2');
+        $this->assertSame($cartaRemovida->getNaipe(), 'paus');
+        $this->assertSame($cartaRemovida->getValor(), 'A');
     }
 
     /**
@@ -102,8 +102,8 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     public function testRetiraCartaFim() {
         $this->popularBaralho();
         $cartaRemovida = $this->baralho->retiraCartaFim();
-        $this->assertSame($cartaRemovida->getNaipe(), 'paus');
-        $this->assertSame($cartaRemovida->getValor(), 'A');
+        $this->assertSame($cartaRemovida->getNaipe(), 'copas');
+        $this->assertSame($cartaRemovida->getValor(), '2');
     }
 
     /**
