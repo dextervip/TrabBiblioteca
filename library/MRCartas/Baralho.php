@@ -111,5 +111,17 @@ class Baralho {
         return count($this->cartas);
     }
 
+    /**
+     * Retorna todas as cartas em uma string
+     * @return string
+     */
+    public function toString() {
+        $valCarta = '';
+        /* @var $carta \MRCartas\Carta */
+        foreach ($this->cartas as $carta) {
+            $valCarta .= '<br />' . $carta->getValor() . ' ' . $carta->getNaipe();
+        }
+        return $valCarta;
+    }
 }
 
