@@ -39,8 +39,8 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      */
     public function testAddCarta() {
         $this->popularBaralho();
-        $this->assertSame($this->monte->getBaralho()[0]->getNaipe(), 'paus');
-        $this->assertSame($this->monte->getBaralho()[$this->monte->count() - 1]->getNaipe(), 'copas');
+        $this->assertSame($this->monte->getCartas()[0]->getNaipe(), 'paus');
+        $this->assertSame($this->monte->getCartas()[$this->monte->count() - 1]->getNaipe(), 'copas');
     }
 
     /**
@@ -134,8 +134,8 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
             }
         }
         $monte2->divideBaralho(14);
-        $cartas1 = $this->monte->getBaralho();
-        $cartas2 = $monte2->getBaralho();
+        $cartas1 = $this->monte->getCartas();
+        $cartas2 = $monte2->getCartas();
         
         $this->assertEquals($cartas1[0]->getNaipe(), 'ouro');
         $this->assertEquals($cartas1[0]->getValor(), 'K');
@@ -163,12 +163,12 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
                 $carta = new \MRCartas\Carta();
                 $carta->setNaipe($naipe);
                 $carta->setValor($value);
-                $baralho->addCartaBaralho($carta);
+                $baralho->addCarta($carta);
                 $cartasAdd[$i] = $carta;
                 $i++;
             }
         }
-        $baralho->setCartas($cartasAdd);
+        //$baralho->setCartas($cartasAdd);
         $baralho->embaralhaCartas();
         $this->assertNotEquals($baralho->getCartas(), $cartasAdd);
         
@@ -185,18 +185,18 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     public function testPassaCartaInicioFim() {
         $baralho = new \MRCartas\Baralho();
         $baralho->passaCartaInicioFim();
-        $this->assertEquals($baralho->getBaralho(), array());
+        $this->assertEquals($baralho->getCartas(), array());
 
         $asPaus = new \MRCartas\Carta('A', 'paus');
         $baralho->addCarta($asPaus);
         $baralho->passaCartaInicioFim();
-        $this->assertEquals($baralho->getBaralho()[0], $asPaus);
+        $this->assertEquals($baralho->getCartas()[0], $asPaus);
 
         $dezOuro = new \MRCartas\Carta('10', 'ouro');
         $baralho->addCarta($dezOuro);
         $baralho->passaCartaInicioFim();
-        $this->assertEquals($baralho->getBaralho()[1], $asPaus);
-        $this->assertEquals($baralho->getBaralho()[0], $dezOuro);
+        $this->assertEquals($baralho->getCartas()[1], $asPaus);
+        $this->assertEquals($baralho->getCartas()[0], $dezOuro);
     }
 
     /**
@@ -243,7 +243,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
                 $carta = new \MRCartas\Carta();
                 $carta->setNaipe($naipe);
                 $carta->setValor($value);
-                $baralho->addCartaBaralho($carta);
+                $baralho->addCarta($carta);
                 $cartasAdd[$i] = $carta;
                 $i++;
             }

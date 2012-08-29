@@ -74,9 +74,8 @@ class Carta {
         $this->valor = $valor;
     }
     
-    /* @var $carta \MRCartas\Carta */
-    public function isPar($carta) {
-        $valor = $carta->getValor();
+    public function isPar() {
+        $valor = $this->getValor();
         if (is_numeric($valor)) {
             return $valor % 2 == 0;
         } else {
@@ -104,8 +103,8 @@ class Carta {
         }
     }
     
-    public function isImpar($carta) {
-        $impar = !$this->isPar($carta);
+    public function isImpar() {
+        $impar = !$this->isPar();
         return $impar;
     }
     

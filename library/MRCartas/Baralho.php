@@ -118,7 +118,7 @@ class Baralho extends BaralhoAbstract {
      */
     public function setCartas(array $cartas) {
         foreach ($cartas as $carta) {
-            if ($carta instanceof \MRCartas\Baralho == false) {
+            if ($carta instanceof \MRCartas\Carta == false) {
                 throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::PARAMETRO_INVALIDO);
             }
         }
