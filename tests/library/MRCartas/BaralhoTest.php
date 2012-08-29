@@ -211,7 +211,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * @author renan
      */
     public function testSetCartas() {
-<<<<<<< HEAD
         
         $baralho = new \MRCartas\Baralho();
         $cartasAdd = array();
@@ -231,10 +230,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         $baralho->setCartas($cartasAdd);
         $this->assertEquals($baralho->getCartas(), $cartasAdd);
         
-=======
-        // Remove the following lines when you implement this test.
-        $this->fail('Não implementado ainda');
->>>>>>> origin/master
     }
     
 }

@@ -111,9 +111,6 @@ class Baralho extends BaralhoAbstract {
     public function getCartas() {
         return $this->cartas;
     }
-<<<<<<< HEAD
-    
-=======
 
     /**
      * Seta um array de cartas no baralho.
@@ -121,7 +118,6 @@ class Baralho extends BaralhoAbstract {
      * @param array $cartas
      * @throws \MRCartas\BaralhoException
      */
->>>>>>> origin/master
     public function setCartas(array $cartas) {
         foreach ($cartas as $carta) {
             if ($carta instanceof \MRCartas\Baralho == false) {
