@@ -79,11 +79,9 @@ class Baralho extends BaralhoAbstract {
      * @param int $posicaoCorte
      */
     public function divideBaralho($posicaoCorte) {
-        $num = count($this->cartas) / $posicaoCorte;
-        $parte1 = array_slice($this->cartas, 0, $num);
-        $parte2 = array_slice($this->cartas, $num);
-        array_merge($parte2, $parte1);
-        $this->cartas = $parte2;
+        $parte1 = array_slice($this->cartas, 0, $posicaoCorte);
+        $parte2 = array_slice($this->cartas, $posicaoCorte, $this->count());
+        $this->cartas = array_merge($parte2, $parte1);
     }
 
     /**

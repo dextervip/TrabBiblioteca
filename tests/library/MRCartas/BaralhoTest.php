@@ -118,29 +118,31 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * @author Juliano
      */
     public function testDivideBaralho() {
-
+        $this->monte = new \MRCartas\Baralho();
         $this->popularBaralho();
-
-        /**
-         * Armazena na variável '$meioBaralho' o retorno do método 'divideBaralho()'.
-         */
-        // $meioBaralho = $this->monte->divideBaralho();
-
-        /**
-         * Verifica o tamanho do retorno do método divideBaralho. 
-         */
-        //$numCartasMeioBaralho = count($meioBaralho);
-
-        /**
-         * Sabe-se que o meio do baralho é igual a 26.
-         */
-        $numCartasMeioBaralho = 26;
-
-        /**
-         * Verifica se o tamanho da parte 2 que é retornada 
-         * é realmente 26(o meio do baralho). 
-         */
-        $this->assertSame($numCartasMeioBaralho, 26);
+        $this->monte->divideBaralho(14);
+        
+        $monte2 = new \MRCartas\Baralho();
+        $naipes = array('paus', 'ouro', 'espada', 'copas');
+        $valores = array('A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2');
+        foreach ($naipes as $naipe) {
+            foreach ($valores as $value) {
+                $carta = new \MRCartas\Carta();
+                $carta->setNaipe($naipe);
+                $carta->setValor($value);
+                $monte2->addCarta($carta);
+            }
+        }
+        $monte2->divideBaralho(14);
+        $cartas1 = $this->monte->getBaralho();
+        $cartas2 = $monte2->getBaralho();
+        
+        $this->assertEquals($cartas1[0]->getNaipe(), 'ouro');
+        $this->assertEquals($cartas1[0]->getValor(), 'K');
+        $this->assertEquals($cartas1[51]->getNaipe(), 'ouro');
+        $this->assertEquals($cartas1[51]->getValor(), 'A');
+        
+        $this->assertEquals($cartas1, $cartas2);
     }
 
     /**

@@ -74,6 +74,41 @@ class Carta {
         $this->valor = $valor;
     }
     
+    /* @var $carta \MRCartas\Carta */
+    public function isPar($carta) {
+        $valor = $carta->getValor();
+        if (is_numeric($valor)) {
+            return $valor % 2 == 0;
+        } else {
+            switch ($valor) {
+                case 'A':
+                    return false;
+                    break;
+                
+                case 'J':
+                    return false;
+                    break;
+                
+                case 'Q':
+                    return true;
+                    break;
+                
+                case 'K':
+                    return false;
+                    break;
+                
+                default:
+                    throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::PARAMETRO_INVALIDO);
+                    break;
+            }
+        }
+    }
+    
+    public function isImpar($carta) {
+        $impar = !$this->isPar($carta);
+        return $impar;
+    }
+    
     /**
      * Retorna a carta em string
      * 
