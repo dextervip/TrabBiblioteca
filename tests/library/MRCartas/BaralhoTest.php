@@ -119,8 +119,34 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      */
     public function testDivideBaralho() {
 
+        $this->monte = new \MRCartas\Baralho();
         $this->popularBaralho();
+        $this->monte->divideBaralho(14);
 
+        $monte2 = new \MRCartas\Baralho();
+        $naipes = array('paus', 'ouro', 'espada', 'copas');
+        $valores = array('A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2');
+        foreach ($naipes as $naipe) {
+            foreach ($valores as $value) {
+                $carta = new \MRCartas\Carta();
+                $carta->setNaipe($naipe);
+                $carta->setValor($value);
+                $monte2->addCarta($carta);
+            }
+        }
+        $monte2->divideBaralho(14);
+        $cartas1 = $this->monte->getBaralho();
+        $cartas2 = $monte2->getBaralho();
+
+        $this->assertEquals($cartas1[0]->getNaipe(), 'ouro');
+        $this->assertEquals($cartas1[0]->getValor(), 'K');
+        $this->assertEquals($cartas1[51]->getNaipe(), 'ouro');
+        $this->assertEquals($cartas1[51]->getValor(), 'A');
+
+        $this->assertEquals($cartas1, $cartas2);
+
+//----------------------------- Testes anteriores a refatoração do Método divideBaralho() ---------------------        
+        //$this->popularBaralho();
         /**
          * Armazena na variável '$meioBaralho' o retorno do método 'divideBaralho()'.
          */
@@ -132,15 +158,10 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         //$numCartasMeioBaralho = count($meioBaralho);
 
         /**
-         * Sabe-se que o meio do baralho é igual a 26.
-         */
-        $numCartasMeioBaralho = 26;
-
-        /**
          * Verifica se o tamanho da parte 2 que é retornada 
          * é realmente 26(o meio do baralho). 
          */
-        $this->assertSame($numCartasMeioBaralho, 26);
+        //$this->assertSame($numCartasMeioBaralho, 26);
     }
 
     /**
@@ -150,7 +171,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * @author renan
      */
     public function testEmbaralhaCartas() {
-        
+
         $baralho = new \MRCartas\Baralho();
         $cartasAdd = array();
         $i = 0;
@@ -169,7 +190,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         $baralho->setCartas($cartasAdd);
         $baralho->embaralhaCartas();
         $this->assertNotEquals($baralho->getCartas(), $cartasAdd);
-        
     }
 
     /**
@@ -222,7 +242,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
             }
         }
     }
-    
+
     /**
      * Testa se o baralho enviado foi realmente atribuido.
      * @covers MRCartas\Baralho::setCartas
@@ -230,7 +250,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * @author renan
      */
     public function testSetCartas() {
-        
+
         $baralho = new \MRCartas\Baralho();
         $cartasAdd = array();
         $i = 0;
@@ -248,7 +268,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         }
         $baralho->setCartas($cartasAdd);
         $this->assertEquals($baralho->getCartas(), $cartasAdd);
-        
     }
-    
+
 }
