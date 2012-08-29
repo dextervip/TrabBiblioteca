@@ -149,8 +149,26 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * @author
      */
     public function testEmbaralhaCartas() {
-        // Remove the following lines when you implement this test.
-        $this->fail('Não implementado ainda');
+        
+        $baralho = new \MRCartas\Baralho();
+        $cartasAdd = array();
+        $i = 0;
+        $naipes = array('paus', 'ouro', 'espada', 'copas');
+        $valores = array('A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2');
+        foreach ($naipes as $naipe) {
+            foreach ($valores as $value) {
+                $carta = new \MRCartas\Carta();
+                $carta->setNaipe($naipe);
+                $carta->setValor($value);
+                $baralho->addCartaBaralho($carta);
+                $cartasAdd[$i] = $carta;
+                $i++;
+            }
+        }
+        $baralho->setCartas($cartasAdd);
+        $baralho->embaralhaCartas();
+        $this->assertNotEquals($baralho->getCartas(), $cartasAdd);
+        
     }
 
     /**
