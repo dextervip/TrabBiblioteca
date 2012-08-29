@@ -144,9 +144,10 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
+     * Testa se o baralho fica diferente depois de embaralhar as cartas.
      * @covers MRCartas\Baralho::embaralhaCartas
      * @todo Implement testEmbaralhaCartas().
-     * @author
+     * @author renan
      */
     public function testEmbaralhaCartas() {
         
