@@ -134,8 +134,8 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
             }
         }
         $monte2->divideBaralho(14);
-        $cartas1 = $this->monte->getBaralho();
-        $cartas2 = $monte2->getBaralho();
+        $cartas1 = $this->monte->getCartas();
+        $cartas2 = $monte2->getCartas();
 
         $this->assertEquals($cartas1[0]->getNaipe(), 'ouro');
         $this->assertEquals($cartas1[0]->getValor(), 'K');
