@@ -121,7 +121,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         $this->monte = new \MRCartas\Baralho();
         $this->popularBaralho();
         $this->monte->divideBaralho(14);
-        
+
         $monte2 = new \MRCartas\Baralho();
         $naipes = array('paus', 'ouro', 'espada', 'copas');
         $valores = array('A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2');
@@ -134,14 +134,14 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
             }
         }
         $monte2->divideBaralho(14);
-        $cartas1 = $this->monte->getCartas();
-        $cartas2 = $monte2->getCartas();
-        
+        $cartas1 = $this->monte->getBaralho();
+        $cartas2 = $monte2->getBaralho();
+
         $this->assertEquals($cartas1[0]->getNaipe(), 'ouro');
         $this->assertEquals($cartas1[0]->getValor(), 'K');
         $this->assertEquals($cartas1[51]->getNaipe(), 'ouro');
         $this->assertEquals($cartas1[51]->getValor(), 'A');
-        
+
         $this->assertEquals($cartas1, $cartas2);
     }
 
