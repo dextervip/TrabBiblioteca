@@ -52,4 +52,13 @@ abstract class BaralhoAbstract {
         }
         $this->cartas[] = $carta;
     }
+    
+    /**
+     * Retorna o número de cartas no baralho
+     * 
+     * @return int
+     */
+    public function count() {
+        return count($this->cartas);
+    }
 }

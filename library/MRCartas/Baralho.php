@@ -42,7 +42,8 @@ class Baralho extends BaralhoAbstract {
 
     /**
      * Retira a carta do inicio do array
-     * @return Array 
+     * 
+     * @return Carta
      */
     public function retiraCartaInicio() {
         return array_shift($this->cartas);
@@ -55,21 +56,6 @@ class Baralho extends BaralhoAbstract {
     public function retiraCartaFim() {
         return array_pop($this->cartas);
     }
-
-    /**
-     * Método que divide o baralho em duas partes, 
-     * retorna a segunda parte e atualiza a primeira parte
-     * 
-     *  @return array 
-     */
-    /*public function divideBaralho() {
-        $num = count($this->cartas) / 2;
-
-        $parte1 = array_slice($this->cartas, 0, $num);
-        $parte2 = array_slice($this->cartas, $num);
-        $this->cartas = $parte1;
-        return $parte2;
-    }*/
     
     /**
      * Divide o baralho na posição do baralho passada por parâmetro, passando o
@@ -126,15 +112,6 @@ class Baralho extends BaralhoAbstract {
             throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::LIMITE_CARTAS_EXCEDIDO);
         }
         $this->cartas = $cartas;
-    }
-
-    /**
-     * Retorna o número de cartas no baralho
-     * 
-     * @return int
-     */
-    public function count() {
-        return count($this->cartas);
     }
 
     /**

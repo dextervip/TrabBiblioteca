@@ -95,7 +95,7 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
              * Testa se a string(valor) retornada pelo método invocado 'getValor()' é a mesma
              * de $value.
              */
-            $this->assert($this->object->getValor(), $value);
+            $this->assertEquals($this->object->getValor(), $value);
             } catch (InvalidArgumentException $expected){
                 return;
             }
