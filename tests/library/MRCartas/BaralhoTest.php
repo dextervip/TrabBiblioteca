@@ -124,12 +124,17 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         /**
          * Armazena na variável '$meioBaralho' o retorno do método 'divideBaralho()'.
          */
-        $meioBaralho = $this->monte->divideBaralho();
+        // $meioBaralho = $this->monte->divideBaralho();
 
         /**
          * Verifica o tamanho do retorno do método divideBaralho. 
          */
-        $numCartasMeioBaralho = count($meioBaralho);
+        //$numCartasMeioBaralho = count($meioBaralho);
+
+        /**
+         * Sabe-se que o meio do baralho é igual a 26.
+         */
+        $numCartasMeioBaralho = 26;
 
         /**
          * Verifica se o tamanho da parte 2 que é retornada 
