@@ -106,7 +106,7 @@ class Baralho extends BaralhoAbstract {
      * 
      * @return array 
      */
-    public function getBaralho() {
+    public function getCartas() {
         return $this->cartas;
     }
 

@@ -146,13 +146,32 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
+     * Testa se o baralho fica diferente depois de embaralhar as cartas.
      * @covers MRCartas\Baralho::embaralhaCartas
      * @todo Implement testEmbaralhaCartas().
-     * @author
+     * @author renan
      */
     public function testEmbaralhaCartas() {
-        // Remove the following lines when you implement this test.
-        $this->fail('Não implementado ainda');
+        
+        $baralho = new \MRCartas\Baralho();
+        $cartasAdd = array();
+        $i = 0;
+        $naipes = array('paus', 'ouro', 'espada', 'copas');
+        $valores = array('A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2');
+        foreach ($naipes as $naipe) {
+            foreach ($valores as $value) {
+                $carta = new \MRCartas\Carta();
+                $carta->setNaipe($naipe);
+                $carta->setValor($value);
+                $baralho->addCartaBaralho($carta);
+                $cartasAdd[$i] = $carta;
+                $i++;
+            }
+        }
+        $baralho->setCartas($cartasAdd);
+        $baralho->embaralhaCartas();
+        $this->assertNotEquals($baralho->getCartas(), $cartasAdd);
+        
     }
 
     /**
@@ -182,11 +201,11 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * Testa se são retornadas as cartas do baralho corretamente.
-     * @covers MRCartas\Baralho::getBaralho
-     * @todo Implement testGetBaralho().
+     * @covers MRCartas\Baralho::getCartas
+     * @todo Implement testGetCartas().
      * @author thiago
      */
-    public function testGetBaralho() {
+    public function testGetCartas() {
         $baralho = new \MRCartas\Baralho();
         $cartasAdd = array();
         $i = 0;
@@ -201,19 +220,37 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
                 $cartasAdd[$i] = $carta;
                 $i++;
 
-                $this->assertEquals($baralho->getBaralho(), $cartasAdd);
+                $this->assertEquals($baralho->getCartas(), $cartasAdd);
             }
         }
     }
-
+    
     /**
+     * Testa se o baralho enviado foi realmente atribuido.
      * @covers MRCartas\Baralho::setCartas
      * @todo Implement testSetCartas().
-     * @author
+     * @author renan
      */
     public function testSetCartas() {
-        // Remove the following lines when you implement this test.
-        $this->fail('Não implementado ainda');
+        
+        $baralho = new \MRCartas\Baralho();
+        $cartasAdd = array();
+        $i = 0;
+        $naipes = array('paus', 'ouro', 'espada', 'copas');
+        $valores = array('A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2');
+        foreach ($naipes as $naipe) {
+            foreach ($valores as $value) {
+                $carta = new \MRCartas\Carta();
+                $carta->setNaipe($naipe);
+                $carta->setValor($value);
+                $baralho->addCartaBaralho($carta);
+                $cartasAdd[$i] = $carta;
+                $i++;
+            }
+        }
+        $baralho->setCartas($cartasAdd);
+        $this->assertEquals($baralho->getCartas(), $cartasAdd);
+        
     }
-
+    
 }
