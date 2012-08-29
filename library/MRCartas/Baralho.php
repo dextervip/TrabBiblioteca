@@ -1,5 +1,25 @@
 <?php
 
+/*
+ * License
+ * ========================================
+ * Biblioteca para manipulação de cartas
+ * Copyright (C) 2012  Rafael Tavares Amorim e Marcelo Maia Lopes
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 namespace MRCartas;
 
 //A biblioteca de manipulação de baralho, por padrão o tradicional de 52 cartas sem curingas, 
@@ -13,23 +33,19 @@ namespace MRCartas;
 //   (no monte de compra uma carta só pode ser vista se for removida dele).
 
 /**
- * Description of Baralho
+ * Baralho é a classe que implementa os métodos de um baralho. Nele os jogadores 
+ * buscam as cartas.
  *
  * @author Marcelo
  */
-class Baralho {
-
-    const LIMITE_CARTAS = 52;
-
-    private $cartas = array();
-    private $descarte = array();
+class Baralho extends BaralhoAbstract {
 
     /**
-     * retira a carta do inicio do array
+     * Retira a carta do inicio do array
      * @return Array 
      */
-    public function retiraCartaTopo() {
-        return array_pop($this->cartas);
+    public function retiraCartaInicio() {
+        return array_shift($this->cartas);
     }
 
     /**
@@ -37,7 +53,7 @@ class Baralho {
      * @return Array 
      */
     public function retiraCartaFim() {
-        return array_shift($this->cartas);
+        return array_pop($this->cartas);
     }
 
     /**
@@ -46,35 +62,39 @@ class Baralho {
      * 
      *  @return array 
      */
-    public function divideBaralho() {
+    /*public function divideBaralho() {
         $num = count($this->cartas) / 2;
 
         $parte1 = array_slice($this->cartas, 0, $num);
         $parte2 = array_slice($this->cartas, $num);
         $this->cartas = $parte1;
         return $parte2;
-    }
-
+    }*/
+    
     /**
-     * metodo para adicionar carta no baralho
-     * @param Carta $carta 
+     * Divide o baralho na posição do baralho passada por parâmetro, passando o
+     * subconjunto de cartas inferior para cima e o subconjunto de cartas 
+     * superior para baixo.
+     * 
+     * @param int $posicaoCorte
      */
-    public function addCartaBaralho(\MRCartas\Carta $carta) {
-        if (count($this->cartas) > self::LIMITE_CARTAS) {
-            throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::LIMITE_CARTAS_EXCEDIDO);
-        }
-        $this->cartas[] = $carta;
+    public function divideBaralho($posicaoCorte) {
+        $num = count($this->cartas) / $posicaoCorte;
+        $parte1 = array_slice($this->cartas, 0, $num);
+        $parte2 = array_slice($this->cartas, $num);
+        array_merge($parte2, $parte1);
+        $this->cartas = $parte2;
     }
 
     /**
-     * metodo para embaralhar a lista de cartas 
+     * Método para embaralhar o baralho
      */
     public function embaralhaCartas() {
         shuffle($this->cartas);
     }
 
     /**
-     *  metodo para retirar carta do inicio do baralho e move-la para o fim do baralho 
+     *  Método para retirar carta do inicio do baralho e move-la para o fim do baralho 
      */
     public function passaCartaInicioFim() {
         $cartaTopo = array_shift($this->cartas);
@@ -84,13 +104,24 @@ class Baralho {
     }
 
     /**
-     * metodo para acessar a lista
-     * @return Array 
+     * Método para obter todas as cartas do baralho.
+     * 
+     * @return array 
      */
     public function getCartas() {
         return $this->cartas;
     }
+<<<<<<< HEAD
     
+=======
+
+    /**
+     * Seta um array de cartas no baralho.
+     * 
+     * @param array $cartas
+     * @throws \MRCartas\BaralhoException
+     */
+>>>>>>> origin/master
     public function setCartas(array $cartas) {
         foreach ($cartas as $carta) {
             if ($carta instanceof \MRCartas\Baralho == false) {
@@ -104,12 +135,26 @@ class Baralho {
     }
 
     /**
-     * Returna o número de cartas no baralho
+     * Retorna o número de cartas no baralho
+     * 
      * @return int
      */
     public function count() {
         return count($this->cartas);
     }
 
+    /**
+     * Retorna todas as cartas do baralho em uma string
+     * 
+     * @return string
+     */
+    public function toString() {
+        $valCarta = '';
+        /* @var $carta \MRCartas\Carta */
+        foreach ($this->cartas as $carta) {
+            $valCarta .= $carta->toString() . '<br />';
+        }
+        return $valCarta;
+    }
 }
 
