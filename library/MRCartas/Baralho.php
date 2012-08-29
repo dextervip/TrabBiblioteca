@@ -13,19 +13,15 @@ namespace MRCartas;
 //   (no monte de compra uma carta só pode ser vista se for removida dele).
 
 /**
- * Description of Baralho
+ * Baralho é a classe que implementa os métodos de um baralho. Nele os jogadores 
+ * buscam as cartas.
  *
  * @author Marcelo
  */
-class Baralho {
-
-    const LIMITE_CARTAS = 52;
-
-    private $cartas = array();
-    private $descarte = array();
+class Baralho extends BaralhoAbstract {
 
     /**
-     * retira a carta do inicio do array
+     * Retira a carta do inicio do array
      * @return Array 
      */
     public function retiraCartaInicio() {
@@ -46,35 +42,39 @@ class Baralho {
      * 
      *  @return array 
      */
-    public function divideBaralho() {
+    /*public function divideBaralho() {
         $num = count($this->cartas) / 2;
 
         $parte1 = array_slice($this->cartas, 0, $num);
         $parte2 = array_slice($this->cartas, $num);
         $this->cartas = $parte1;
         return $parte2;
-    }
-
+    }*/
+    
     /**
-     * metodo para adicionar carta no baralho
-     * @param Carta $carta 
+     * Divide o baralho na posição do baralho passada por parâmetro, passando o
+     * subconjunto de cartas inferior para cima e o subconjunto de cartas 
+     * superior para baixo.
+     * 
+     * @param int $posicaoCorte
      */
-    public function addCartaBaralho(\MRCartas\Carta $carta) {
-        if (count($this->cartas) > self::LIMITE_CARTAS) {
-            throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::LIMITE_CARTAS_EXCEDIDO);
-        }
-        $this->cartas[] = $carta;
+    public function divideBaralho($posicaoCorte) {
+        $num = count($this->cartas) / $posicaoCorte;
+        $parte1 = array_slice($this->cartas, 0, $num);
+        $parte2 = array_slice($this->cartas, $num);
+        array_merge($parte2, $parte1);
+        $this->cartas = $parte2;
     }
 
     /**
-     * metodo para embaralhar a lista de cartas 
+     * Método para embaralhar o baralho
      */
     public function embaralhaCartas() {
         shuffle($this->cartas);
     }
 
     /**
-     *  metodo para retirar carta do inicio do baralho e move-la para o fim do baralho 
+     *  Método para retirar carta do inicio do baralho e move-la para o fim do baralho 
      */
     public function passaCartaInicioFim() {
         $cartaTopo = array_shift($this->cartas);
@@ -84,13 +84,20 @@ class Baralho {
     }
 
     /**
-     * Método para acessar a lista
-     * @return Array 
+     * Método para obter todas as cartas do baralho.
+     * 
+     * @return array 
      */
     public function getBaralho() {
         return $this->cartas;
     }
 
+    /**
+     * Seta um array de cartas no baralho.
+     * 
+     * @param array $cartas
+     * @throws \MRCartas\BaralhoException
+     */
     public function setCartas(array $cartas) {
         foreach ($cartas as $carta) {
             if ($carta instanceof \MRCartas\Baralho == false) {
@@ -104,7 +111,8 @@ class Baralho {
     }
 
     /**
-     * Returna o número de cartas no baralho
+     * Retorna o número de cartas no baralho
+     * 
      * @return int
      */
     public function count() {
@@ -112,7 +120,8 @@ class Baralho {
     }
 
     /**
-     * Retorna todas as cartas em uma string
+     * Retorna todas as cartas do baralho em uma string
+     * 
      * @return string
      */
     public function toString() {

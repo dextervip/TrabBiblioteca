@@ -13,7 +13,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     /**
      * @var Baralho
      */
-    protected $baralho;
+    protected $monte;
 
     /**
      * 
@@ -21,7 +21,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        $this->baralho = new Baralho;
+        $this->monte = new Baralho;
     }
 
     /**
@@ -33,27 +33,27 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @covers MRCartas\Baralho::addCartaBaralho
-     * @todo Implement testAddCartaBaralho().
+     * @covers MRCartas\Baralho::addCarta
+     * @todo Implement testAddCarta().
      * @author Rafael
      */
-    public function testAddCartaBaralho() {
+    public function testAddCarta() {
         $this->popularBaralho();
-        $this->assertSame($this->baralho->getBaralho()[0]->getNaipe(), 'paus');
-        $this->assertSame($this->baralho->getBaralho()[$this->baralho->count() - 1]->getNaipe(), 'copas');
+        $this->assertSame($this->monte->getBaralho()[0]->getNaipe(), 'paus');
+        $this->assertSame($this->monte->getBaralho()[$this->monte->count() - 1]->getNaipe(), 'copas');
     }
 
     /**
      * Testa o limite de cartas do baralho, se for excedido será lançada uma exceção
-     * @covers MRCartas\Baralho::addCartaBaralho
-     * @todo Implement testAddCartaBaralho().
+     * @covers MRCartas\Baralho::addCarta
+     * @todo Implement testAddCarta().
      * @author Rafael
      * @expectedException MRCartas\BaralhoException
      */
     public function testAddLimiteCartas() {
         $this->popularBaralho();
-        $this->baralho->addCartaBaralho(new Carta());
-        $this->baralho->addCartaBaralho(new Carta());
+        $this->monte->addCarta(new Carta());
+        $this->monte->addCarta(new Carta());
     }
 
     private function popularBaralho() {
@@ -64,7 +64,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
                 $carta = new \MRCartas\Carta();
                 $carta->setNaipe($naipe);
                 $carta->setValor($value);
-                $this->baralho->addCartaBaralho($carta);
+                $this->monte->addCarta($carta);
             }
         }
     }
@@ -75,7 +75,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      */
     public function testCount() {
         $this->popularBaralho();
-        $this->assertSame($this->baralho->count(), 52);
+        $this->assertSame($this->monte->count(), 52);
     }
 
     /**
@@ -87,7 +87,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      */
     public function testRetiraCartaInicio() {
         $this->popularBaralho();
-        $cartaRemovida = $this->baralho->retiraCartaInicio();
+        $cartaRemovida = $this->monte->retiraCartaInicio();
         $this->assertSame($cartaRemovida->getNaipe(), 'paus');
         $this->assertSame($cartaRemovida->getValor(), 'A');
     }
@@ -101,7 +101,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      */
     public function testRetiraCartaFim() {
         $this->popularBaralho();
-        $cartaRemovida = $this->baralho->retiraCartaFim();
+        $cartaRemovida = $this->monte->retiraCartaFim();
         $this->assertSame($cartaRemovida->getNaipe(), 'copas');
         $this->assertSame($cartaRemovida->getValor(), '2');
     }
@@ -124,7 +124,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         /**
          * Armazena na variável '$meioBaralho' o retorno do método 'divideBaralho()'.
          */
-        $meioBaralho = $this->baralho->divideBaralho();
+        $meioBaralho = $this->monte->divideBaralho();
 
         /**
          * Verifica o tamanho do retorno do método divideBaralho. 
@@ -162,12 +162,12 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($baralho->getBaralho(), array());
 
         $asPaus = new \MRCartas\Carta('A', 'paus');
-        $baralho->addCartaBaralho($asPaus);
+        $baralho->addCarta($asPaus);
         $baralho->passaCartaInicioFim();
         $this->assertEquals($baralho->getBaralho()[0], $asPaus);
 
         $dezOuro = new \MRCartas\Carta('10', 'ouro');
-        $baralho->addCartaBaralho($dezOuro);
+        $baralho->addCarta($dezOuro);
         $baralho->passaCartaInicioFim();
         $this->assertEquals($baralho->getBaralho()[1], $asPaus);
         $this->assertEquals($baralho->getBaralho()[0], $dezOuro);
@@ -190,7 +190,7 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
                 $carta = new \MRCartas\Carta();
                 $carta->setNaipe($naipe);
                 $carta->setValor($value);
-                $baralho->addCartaBaralho($carta);
+                $baralho->addCarta($carta);
                 $cartasAdd[$i] = $carta;
                 $i++;
 
