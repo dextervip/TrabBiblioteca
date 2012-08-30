@@ -54,6 +54,17 @@ abstract class BaralhoAbstract {
     }
     
     /**
+     * Método para adicionar várias cartas no baralho
+     * 
+     * @param Carta $carta 
+     */
+    public function addCartas($cartas) {
+        foreach ($cartas as $carta) {
+            $this->addCarta($carta);
+        }
+    }
+    
+    /**
      * Retira a carta do inicio do array
      * 
      * @return Carta

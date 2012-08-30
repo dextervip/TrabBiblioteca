@@ -10,11 +10,12 @@ class Jogador {
     private $id;
     private $escolha;
     
-    /* @var $cartas MRCartas\Baralho */
+    /* @var $cartas \MRCartas\Baralho */
     private $cartas;
     
-    public function __construct() {
-        $cartas = new \MRCartas\Baralho;
+    public function __construct($id = null) {
+        $this->id = $id;
+        $this->cartas = new \MRCartas\Baralho();
     }
     
     public function getId() {
@@ -41,7 +42,11 @@ class Jogador {
         $this->cartas = $cartas;
     }
     
-    public function addCarta($carta) {
-        $this->cartas->addCarta($carta);
+    public function addCartas($cartas) {
+        $this->cartas->addCartas($cartas);
+    }
+    
+    public function count() {
+        return $this->cartas->count();
     }
 }
