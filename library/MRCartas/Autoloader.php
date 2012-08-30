@@ -27,7 +27,11 @@ namespace MRCartas;
  */
 class Autoloader {
 
+    
     public static function load($class) {
+        if (strpos($class, 'MRCartas') === FALSE) {
+            return;
+        }
         include_once $class . '.php';
     }
 
@@ -41,5 +45,7 @@ if (version_compare(PHP_VERSION, '5.3.0') == -1) {
 spl_autoload_extensions('.php, .class.php');
 spl_autoload_register(array(__NAMESPACE__ . '\Autoloader', 'load'));
 
+
+set_include_path(get_include_path().PATH_SEPARATOR. realpath(__DIR__.'/../'));
 
 

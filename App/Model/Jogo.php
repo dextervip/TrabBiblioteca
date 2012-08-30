@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Model;
 /**
  * Description of Jogo
  *

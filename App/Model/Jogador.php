@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Model;
 /**
  * Description of Jogador
  *
@@ -14,7 +14,7 @@ class Jogador {
     private $cartas;
     
     public function __construct() {
-        $cartas = new MRCartas\Baralho;
+        $cartas = new \MRCartas\Baralho;
     }
     
     public function getId() {

@@ -1,0 +1,7 @@
+RewriteEngine On
+SetEnv APPLICATION_PATH "/TrabBiblioteca/public/"
+
+#RewriteBase /www/tak_me/public/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]

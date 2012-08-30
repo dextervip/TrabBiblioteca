@@ -5,6 +5,9 @@ Phar::mapPhar();
 class Autoloader {
 
     public static function load($class) {
+        if (strpos($class, 'MRCartas') === FALSE) {
+            return;
+        }
         include_once 'phar://package.phar/' . $class . '.php';
     }
 
