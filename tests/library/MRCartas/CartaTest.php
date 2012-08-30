@@ -49,7 +49,9 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @covers MRCartas\Carta::setNaipe
+     * 
+     * 
+     * @author thiago
      */
     public function testSetNaipe() {
         // Remove the following lines when you implement this test.
@@ -57,7 +59,9 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @covers MRCartas\Carta::getValor
+     * Testa os valores com dados que são valores normais das cartas 
+     * 
+     * @author Helison
      */
     public function testGetSetValor() {
         $valores = array('A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2');
@@ -77,32 +81,38 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
         }
     }
 
+    /**
+     * Testa os valores com dados que não são os valores normais das cartas 
+     * 
+     * @author Helison
+     */
     public function testGetSetValorWithWrongValues() {
-        $valores = array('D','P', 'X', 'U', 'O', '88', '18', 'o47', '50', '941', '41', '41', '24', '4u23','876','P0X4','T35T3');
+        $valores = array('D', 'P', 'X', 'U', 'O', '88', '18', 'o47', '50', '941', '41', '41', '24', '4u23', '876', 'P0X4', 'T35T3');
         foreach ($valores as $value) {
             /**
              * Chama a variável 'object' que é um objeto da classe
              * Carta.php, acessa o método 'setValor' 
              * e define por paramêtro a string $value.
              */
-            try{
-            $this->object->setValor($value);
-            
-            /**
-             * Testa se a string(valor) retornada pelo método invocado 'getValor()' é a mesma
-             * de $value.
-             */
-            $this->assertEquals($this->object->getValor(), $value);
-            } catch (InvalidArgumentException $expected){
+            try {
+                $this->object->setValor($value);
+
+                /**
+                 * Testa se a string(valor) retornada pelo método invocado 'getValor()' é a mesma
+                 * de $value.
+                 */
+                $this->assertEquals($this->object->getValor(), $value);
+            } catch (InvalidArgumentException $expected) {
                 return;
             }
-             $this->fail('Nao ocorreu execeção.');
-            }
+            $this->fail('Nao ocorreu execeção.');
         }
-    
+    }
 
     /**
-     * @covers MRCartas\Carta::setValor
+     * Testa os valores com dados que são valores normais das cartas 
+     * 
+     * @author Helison
      */
     public function testSetValor() {
         /**
@@ -121,19 +131,37 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
          * é o mesmo que se encontra na variável valor.
          */
         $this->assertSame($this->object->getValor(), $valor);
-
-
-
-        // Remove the following lines when you implement this test.
-        $this->fail('Não implementado ainda');
     }
-    
+
     public function testIsPar() {
-        $this->fail('Não implementado ainda');
+        $i = false;
+        $valores = array('K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2', 'A');
+        foreach ($valores as $valor) {
+            $carta = new Carta();
+            $carta->setValor($valor);
+            if ($i) {
+                $this->assertTrue($carta->isPar());
+            } else {
+                $this->assertFalse($carta->isPar());
+            }
+            $i = !$i;
+        }
     }
-    
+
     public function testIsImpar() {
-        $this->fail('Não implementado ainda');
+        $i = true;
+        $valores = array('K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2', 'A');
+        foreach ($valores as $valor) {
+            $carta = new Carta();
+            $carta->setValor($valor);
+            if ($i) {
+                $this->assertTrue($carta->isImpar());
+            } else {
+                $this->assertFalse($carta->isImpar());
+            }
+            $i = !$i;
+        }
     }
+
 }
 
