@@ -6,6 +6,9 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="jquery.js" type="text/javascript" ></script>
         <script src="js/jogo.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        var baseUrl = "<?=APPLICATION_PATH?>";
+        </script>
     </head>
     <body>
         <div class ="container">

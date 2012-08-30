@@ -6,9 +6,13 @@
 $(document).ready(function() {
   
     $("#botao-proxima-carta").click(function(){
-        alert('voce clicou em proxima carta');
+        $.ajax({
+            url: baseUrl+'pegar-carta',
+            success: function(data) {
+                alert('Você clicou em proxima carta: '+ data);
+            }
+        });
+        
     });
-
 });
-
 
