@@ -61,7 +61,7 @@ $jogoApp->get('/get-placar', function () use($session) {
             $descarte = $session->jogo->getDescarte()->count();
             echo Zend_Json_Encoder::encode(array(
                 'countBaralho' => $baralho,
-                'descarte' => $descarte,
+                'countDescarte' => $descarte,
                 'idJogador1' => $jogador1->getId(),
                 'numCartas1' => $jogador1->count(),
                 'idJogador2' => $jogador2->getId(),
