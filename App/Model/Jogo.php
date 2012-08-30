@@ -48,7 +48,7 @@ class Jogo {
     }
     
     public function getCarta() {
-        $this->baralho->retiraCartaInicio();
+        return $this->baralho->retiraCartaInicio();
     }
     
     /* @var $carta MRCartas\Carta */

@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $url_request = $_SERVER['REQUEST_URI'];
 define('APPLICATION_PATH', $_SERVER['APPLICATION_PATH']);
 define('APPLICATION_URL', 'http://' . $_SERVER['HTTP_HOST']);
@@ -18,13 +16,15 @@ require_once 'App/Model/Jogador.php';
 
 $jogoApp = new \App\JogoApp();
 
-//if (isset($_SESSION['jogo']) == false) {
-   $_SESSION['jogo'] = new \App\Model\Jogo();
-//}
+require_once '/../library/Zend/Session.php';
+$session = new Zend_Session_Namespace();
+if (isset($session->jogo) === false) {
+    $session->jogo = new \App\Model\Jogo();
+}
 
 
-$jogoApp->get('/', function () {
-            var_dump($_SESSION['jogo']->getCarta());
+$jogoApp->get('/', function () use($session){
+            var_dump($session->jogo->getCarta());
             die;
             require '../App/View/Home.php';
         });
