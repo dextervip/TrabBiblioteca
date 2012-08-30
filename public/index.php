@@ -55,6 +55,7 @@ $jogoApp->get('/pegar-carta', function () use($session) {
         });
 
 $jogoApp->get('/get-placar', function () use($session) {
+            $jogador = $session->jogo->getJogador();
             $jogador1 = $session->jogo->getJogador1();
             $jogador2 = $session->jogo->getJogador2();
             $baralho = $session->jogo->getBaralho()->count();
@@ -62,9 +63,8 @@ $jogoApp->get('/get-placar', function () use($session) {
             echo Zend_Json_Encoder::encode(array(
                 'countBaralho' => $baralho,
                 'countDescarte' => $descarte,
-                'idJogador1' => $jogador1->getId(),
+                'idJogadorAtual' => $jogador->getId(),
                 'numCartas1' => $jogador1->count(),
-                'idJogador2' => $jogador2->getId(),
                 'numCartas2' => $jogador2->count()));
         });
 
