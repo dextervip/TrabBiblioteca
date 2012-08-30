@@ -5,7 +5,8 @@
 
 $(document).ready(function() {
   
-    $("#botao-proxima-carta").click(function(){
+    $("#botao-proxima-carta").click(function(e){
+        e.preventDefault();
         $.ajax({
             url: baseUrl+'pegar-carta',
             success: function(data) {
@@ -15,4 +16,13 @@ $(document).ready(function() {
         
     });
 });
+
+var Carta = {
+    naipe : '?',
+    valor : '?',
+    
+    hide: function(){
+        $("div#carta").html('?');
+    }
+}
 

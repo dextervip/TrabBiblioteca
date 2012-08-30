@@ -1,0 +1,24 @@
+/* 
+    Document   : jogo
+    Created on : 30/08/2012, 02:50:15
+    Author     : Rafael
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+div#carta{
+    display: block;
+    height: 250px;
+    width: 200px;
+    border: #000 solid medium;
+    border-radius: 10px;
+    border-radius: 15px;
+    background-image: url('../img/blockcard.png');
+    font-size: 50px;
+    font-weight: bold;
+    color: #002a80;
+    line-height:250px;
+    box-shadow: 10px 10px 5px #888;
+    margin: 0 auto;
+}
+
