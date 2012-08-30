@@ -22,3 +22,8 @@ div#carta{
     margin: 0 auto;
 }
 
+span#jogadorAtual {
+    color: red;
+    font-weight: bold;
+}
+

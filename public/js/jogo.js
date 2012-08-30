@@ -4,6 +4,9 @@
  */
 
 $(document).ready(function() {
+    
+    $(".alert").alert();
+    $("div#alerta").hide();
   
     $("#botao-proxima-carta").click(function(e){
         e.preventDefault();
@@ -21,8 +24,44 @@ var Carta = {
     naipe : '?',
     valor : '?',
     
-    hide: function(){
-        $("div#carta").html('?');
+    reset : function(){
+        this.naipe =  '?';
+        this.valor = '?';
+        this.show();
+    },
+    
+    changeValues : function(naipe, valor){
+        this.naipe =  naipe;
+        this.valor = valor;
+    },
+    
+    show: function(){
+        $("div#carta").html(this.naipe+ ' ' + this.valor);
     }
+    
+    
+}
+
+
+var Alerta = {
+    titulo : '',
+    texto : '',
+    
+    changeValues : function(titulo, texto){
+        this.titulo =  titulo;
+        this.texto = texto;
+        $("div#alerta #alerta-titulo").html(this.titulo);
+        $("div#alerta #alerta-texto").html(this.texto);
+    },
+    
+    show: function(){
+        $("div#alerta").show('slow');
+    },
+    
+    hide: function(){
+        $("div#alerta").hide('slow');
+    }
+    
+    
 }
 
