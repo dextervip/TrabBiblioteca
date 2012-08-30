@@ -43,6 +43,14 @@ class Jogo {
             }
         }
     }
+    
+    public function getBaralho() {
+        return $this->baralho;
+    }
+    
+    public function getDescarte() {
+        return $this->descarte;
+    }
 
     public function escolher($escolha) {
         $this->getJogador()->setEscolha($escolha);
@@ -64,7 +72,7 @@ class Jogo {
         $this->descarte->addCarta($carta);
     }
 
-    public function getDescarte() {
+    public function obterDescarte() {
         $this->getJogador()->addCartas($this->descarte->removerCartas());
     }
 

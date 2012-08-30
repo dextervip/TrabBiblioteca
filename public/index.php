@@ -40,9 +40,9 @@ $jogoApp->get('/pegar-carta', function () use($session) {
             $session->jogo->addCartaDescarte($carta);
             $mensagem = "Você acertou! =D";
             if ($carta->isPar() && $jogador->getEscolha() == 'par') {
-                $session->jogo->getDescarte();
+                $session->jogo->obterDescarte();
             } else if ($carta->isImpar() && $jogador->getEscolha() == 'impar') {
-                $session->jogo->getDescarte();
+                $session->jogo->obterDescarte();
             } else {
                 $mensagem = "Você errou! =(";
             }
@@ -57,7 +57,11 @@ $jogoApp->get('/pegar-carta', function () use($session) {
 $jogoApp->get('/get-placar', function () use($session) {
             $jogador1 = $session->jogo->getJogador1();
             $jogador2 = $session->jogo->getJogador2();
+            $baralho = $session->jogo->getBaralho()->count();
+            $descarte = $session->jogo->getDescarte()->count();
             echo Zend_Json_Encoder::encode(array(
+                'countBaralho' => $baralho,
+                'descarte' => $descarte,
                 'idJogador1' => $jogador1->getId(),
                 'numCartas1' => $jogador1->count(),
                 'idJogador2' => $jogador2->getId(),
