@@ -28,4 +28,8 @@ class BaralhoAbstractTest {
     public function testCount() {
         $this->fail("Não implementado ainda!");
     }
+    
+    public function testRetiraCartaInicio() {
+        $this->fail("Não implementado ainda!");
+    }
 }

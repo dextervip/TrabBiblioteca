@@ -41,15 +41,6 @@ namespace MRCartas;
 class Baralho extends BaralhoAbstract {
 
     /**
-     * Retira a carta do inicio do array
-     * 
-     * @return Carta
-     */
-    public function retiraCartaInicio() {
-        return array_shift($this->cartas);
-    }
-
-    /**
      * retira a carta do fim do array
      * @return Array 
      */
