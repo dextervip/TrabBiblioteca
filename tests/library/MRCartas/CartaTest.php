@@ -131,6 +131,13 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
         // Remove the following lines when you implement this test.
         $this->fail('Não implementado ainda');
     }
-
+    
+    public function testIsPar() {
+        $this->fail('Não implementado ainda');
+    }
+    
+    public function testIsImpar() {
+        $this->fail('Não implementado ainda');
+    }
 }
 
