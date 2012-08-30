@@ -63,6 +63,7 @@
                                     <h1>
                                         Descarte
                                     </h1>
+                                    <span id="num-cartas-descarte">0</span>
                                 </div>
                             </li>
                         </ul>
@@ -78,7 +79,7 @@
                     </div>
                     
                     <div class="alert alert-info">
-                        Vez do jogador: <span id="jogadorAtual">Jogador 1</span>
+                        Vez do jogador: <span id="jogadorAtual">Jogador <span id="idJogadorAtual">1</span> </span>
                     </div>
                     <div class ="btn-group" style="margin: 0 auto;">
                         <button id="botao-iniciar-jogo" class="btn btn-primary">Novo Jogo</button>
@@ -89,7 +90,7 @@
                 <div class="span2"> </div>
                 <div class="span5 well">
                     <h2>Jogador 1</h2>
-                    <span>Quantidade de Cartas: <span class="badge">0</span></span>
+                    <span>Quantidade de Cartas: <span id="num-cartas-1" class="badge">0</span></span>
                     <br />
                     <br />
                     <div class="btn-group">
@@ -97,9 +98,9 @@
                         <button class="btn btn-large" type="button" id="botao-impar-1">Impar</button>
                     </div>
                 </div>
-                <div class="span5 well">
+                <div class="span5 well escurecer">
                     <h2>Jogador 2</h2>
-                    <span>Quantidade de Cartas: <span class="badge">0</span></span>
+                    <span>Quantidade de Cartas: <span id="num-cartas-2" class="badge">0</span></span>
                     <br />
                     <br />
                     <div class="btn-group">

@@ -27,3 +27,7 @@ span#jogadorAtual {
     font-weight: bold;
 }
 
+.escurecer {
+    color: #cccccc;
+}
+
