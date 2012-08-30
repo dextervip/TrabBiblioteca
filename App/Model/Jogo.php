@@ -26,6 +26,7 @@ class Jogo {
         $this->baralho = new \MRCartas\Baralho();
         $this->descarte = new \MRCartas\Descarte();
         $this->popularBaralho();
+        $this->baralho->embaralhaCartas();
         $this->jogador1 = new Jogador(1);
         $this->jogador2 = new Jogador(2);
         $this->turno = 1;
