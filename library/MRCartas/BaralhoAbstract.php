@@ -54,6 +54,15 @@ abstract class BaralhoAbstract {
     }
     
     /**
+     * Retira a carta do inicio do array
+     * 
+     * @return Carta
+     */
+    public function retiraCartaInicio() {
+        return array_shift($this->cartas);
+    }
+    
+    /**
      * Retorna o número de cartas no baralho
      * 
      * @return int
