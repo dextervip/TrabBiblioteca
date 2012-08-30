@@ -34,7 +34,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers MRCartas\Baralho::addCarta
-     * @todo Implement testAddCarta().
      * @author Rafael
      */
     public function testAddCarta() {
@@ -46,7 +45,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     /**
      * Testa o limite de cartas do baralho, se for excedido será lançada uma exceção
      * @covers MRCartas\Baralho::addCarta
-     * @todo Implement testAddCarta().
      * @author Rafael
      * @expectedException MRCartas\BaralhoException
      */
@@ -82,7 +80,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * Testa se o metodo RetiraCartaInicio() pega a primeira carta adicionada no array
      *
      * @covers MRCartas\Baralho::retiraCartaInicio
-     * @todo Implement testRetiraCartaInicio().
      * @author Bruno
      */
     public function testRetiraCartaInicio() {
@@ -96,7 +93,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * Testa se o metodo RetiraCartaFim() retira a carta desejada corretamente do fim do baralho
      *
      * @covers MRCartas\Baralho::retiraCartaFim
-     * @todo Implement testRetiraCartaFim().
      * @author Bruno
      */
     public function testRetiraCartaFim() {
@@ -114,7 +110,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * e atualiza a primeira parte do mesmo.
      * 
      * @covers MRCartas\Baralho::divideBaralho
-     * @todo Implement testDivideBaralho().
      * @author Juliano
      */
     public function testDivideBaralho() {
@@ -148,7 +143,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     /**
      * Testa se o baralho fica diferente depois de embaralhar as cartas.
      * @covers MRCartas\Baralho::embaralhaCartas
-     * @todo Implement testEmbaralhaCartas().
      * @author renan
      */
     public function testEmbaralhaCartas() {
@@ -179,7 +173,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
      * O teste ocorre com o baralho vazio, o baralho com apenas uma carta e o 
      * baralho com duas cartas.
      * @covers MRCartas\Baralho::passaCartaInicioFim
-     * @todo Implement testPassaCartaInicioFim().
      * @author thiago
      */
     public function testPassaCartaInicioFim() {
@@ -202,7 +195,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     /**
      * Testa se são retornadas as cartas do baralho corretamente.
      * @covers MRCartas\Baralho::getCartas
-     * @todo Implement testGetCartas().
      * @author thiago
      */
     public function testGetCartas() {
@@ -228,7 +220,6 @@ class BaralhoTest extends \PHPUnit_Framework_TestCase {
     /**
      * Testa se o baralho enviado foi realmente atribuido.
      * @covers MRCartas\Baralho::setCartas
-     * @todo Implement testSetCartas().
      * @author renan
      */
     public function testSetCartas() {

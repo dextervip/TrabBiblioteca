@@ -26,27 +26,27 @@ namespace MRCartas;
  *
  * @author thiago
  */
-class Descarte extends Baralho {
+class Descarte extends BaralhoAbstract {
     
     /**
-     * Remove uma carta do descarte
+     * Remove e limpa o descarte
      * 
-     * @param int $posicao
-     * @return Carta
+     * @return array de Cartas
      */
-    public function removerCarta($posicao) {
-        $carta = $this->getCarta($posicao);
-        unset($this->cartas[$posicao]);
-        return $carta;
+    public function removerCartas() {
+        $cartas = $this->cartas;
+        $this->cartas = null;
+        $this->cartas = array();
+        return $cartas;
     }
     
     /**
-     * Obtém uma carta do descarte
+     * Visualiza uma carta do descarte
      * 
      * @param int $posicao
      * @return Carta
      */
-    public function getCarta($posicao) {
+    public function verCarta($posicao) {
         return $this->cartas[$posicao];
     }
 }

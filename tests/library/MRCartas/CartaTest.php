@@ -31,7 +31,6 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers MRCartas\Carta::getNaipe
-     * @todo Implement testGetNaipe().
      * @author Juliano R
      */
     public function testGetNaipe() {
@@ -51,7 +50,6 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers MRCartas\Carta::setNaipe
-     * @todo Implement testSetNaipe().
      */
     public function testSetNaipe() {
         // Remove the following lines when you implement this test.
@@ -60,7 +58,6 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers MRCartas\Carta::getValor
-     * @todo Implement testGetValor().
      */
     public function testGetSetValor() {
         $valores = array('A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2');
@@ -106,7 +103,6 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers MRCartas\Carta::setValor
-     * @todo Implement testSetValor().
      */
     public function testSetValor() {
         /**
@@ -131,6 +127,13 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
         // Remove the following lines when you implement this test.
         $this->fail('Não implementado ainda');
     }
-
+    
+    public function testIsPar() {
+        $this->fail('Não implementado ainda');
+    }
+    
+    public function testIsImpar() {
+        $this->fail('Não implementado ainda');
+    }
 }
 
