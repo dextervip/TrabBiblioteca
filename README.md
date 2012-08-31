@@ -39,6 +39,7 @@ Para construção da biblioteca:
         pear install --alldeps phing/phing
 
 Atenção: Rodar como administrador
+
 Duvidas: http://www.phing.info/trac/wiki/Users/Installation 
 
 Uso 
