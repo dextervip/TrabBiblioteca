@@ -209,7 +209,7 @@ var Jogo = {
             Alerta.changeValues('Jogador 2 Vencedor', 'O jogador 2 ganhou!');
         }
         
-    }
+    },
     
 }
 
@@ -256,7 +256,13 @@ var Alerta = {
     },
     
     show: function(){
-        $("div#alerta").show('slow').delay(3000).hide('slow');
+        if (typeof(tempo) != 'undefined') {
+            clearTimeout(tempo);
+        }
+        $("div#alerta").show('slow');
+        tempo = setTimeout( function(){
+            $("div#alerta").hide('slow');
+        },3000);
     },
     
     hide: function(){
