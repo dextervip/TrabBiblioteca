@@ -32,7 +32,7 @@ class Autoloader {
         if (strpos($class, 'MRCartas') === FALSE) {
             return;
         }
-        include_once $class . '.php';
+        include_once ltrim($class, '\\') . '.php';
     }
 
 }
@@ -46,6 +46,5 @@ spl_autoload_extensions('.php, .class.php');
 spl_autoload_register(array(__NAMESPACE__ . '\Autoloader', 'load'));
 
 
-set_include_path(get_include_path().PATH_SEPARATOR. realpath(__DIR__.'/../'));
 
 
