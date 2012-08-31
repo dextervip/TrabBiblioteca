@@ -5,7 +5,7 @@ namespace App\Model;
 /**
  * Description of Jogo
  *
- * @author thiago
+ * @author Grupo E.S
  */
 class Jogo {
     /* @var $baralho MRCartas\Baralho */
@@ -44,15 +44,27 @@ class Jogo {
             }
         }
     }
-    
+
+    /**
+     * 
+     * @return type
+     */
     public function getBaralho() {
         return $this->baralho;
     }
-    
+
+    /**
+     * 
+     * @return type
+     */
     public function getDescarte() {
         return $this->descarte;
     }
 
+    /**
+     * 
+     * @param type $escolha
+     */
     public function escolher($escolha) {
         $this->getJogador()->setEscolha($escolha);
     }
@@ -69,18 +81,33 @@ class Jogo {
 
     /* @var $carta MRCartas\Carta */
 
+    /**
+     * 
+     * @param \App\Model\MRCartas\Carta $carta
+     */
     public function addCartaDescarte($carta) {
         $this->descarte->addCarta($carta);
     }
 
+    /**
+     * 
+     */
     public function obterDescarte() {
         $this->getJogador()->addCartas($this->descarte->removerCartas());
     }
 
+    /**
+     * 
+     * @return type
+     */
     public function getTurno() {
         return $this->turno;
     }
 
+    /**
+     * 
+     * @return type
+     */
     public function trocarTurno() {
         $turno = $this->turno;
         if ($turno == 1) {
@@ -93,16 +120,29 @@ class Jogo {
         return $turno;
     }
 
+    /**
+     * 
+     * @return type
+     */
     public function getJogador() {
         $turno = 'jogador' . $this->turno;
         return $this->$turno;
     }
-    
+
+    /**
+     * 
+     * @return type
+     */
     public function getJogador1() {
         return $this->jogador1;
     }
 
+    /**
+     * 
+     * @return type
+     */
     public function getJogador2() {
         return $this->jogador2;
     }
+
 }
