@@ -32,7 +32,7 @@ class Autoloader {
         if (strpos($class, 'MRCartas') === FALSE) {
             return;
         }
-        $class = str_replace ('\\', DIRECTORY_SEPERATOR, $class);
+        $class = str_replace ('\\', DIRECTORY_SEPARATOR , $class);
         include_once $class . '.php';
     }
 
