@@ -4,19 +4,17 @@
  */
 
 $(document).ready(function() {
+    Jogo.novoJogo();
     
     $(".alert").alert();
     $("div#alerta").hide();
   
-    $("#botao-proxima-carta").click(function(e){
+    $("#botao-ver-carta").click(function(e){
+        if($(this).hasClass('disabled') == true) {
+            return;
+        }
         e.preventDefault();
-        $.ajax({
-            url: baseUrl+'pegar-carta',
-            success: function(data) {
-                alert('Você clicou em proxima carta: '+ data);
-            }
-        });
-        
+        Jogo.pegarCarta();
     });
     
     $("#botao-iniciar-jogo").click(function(){
@@ -27,6 +25,7 @@ $(document).ready(function() {
         Jogo.novoJogo();
         $(this).removeClass('disabled');
     });
+    
     
     
 });
@@ -80,6 +79,24 @@ var Jogo = {
                 Alerta.changeValues("Novo Jogo", "O novo jogo foi iniciado!");
                 Alerta.show();
                 Jogo.habilitarJogador1();
+                Carta.reset();
+                Carta.disableShowButton();
+            }
+        });
+    },
+    
+    pegarCarta: function(){
+        $.ajax({
+            async: false,
+            url: baseUrl+'pegar-carta',
+            success: function(data) {
+                //alert('Você clicou em proxima carta: '+ data);
+                var obj = jQuery.parseJSON(data);
+                Carta.changeValues(obj.naipe, obj.valor);
+                Alerta.changeValues('Resultado', obj.mensagem)
+                Alerta.show();
+                Placar.fetchFromServer();
+                Placar.update();
             }
         });
     },
@@ -135,7 +152,14 @@ var Carta = {
     },
     
     show: function(){
-        $("div#carta").html(this.naipe+ ' ' + this.valor);
+        $("div#carta-valor").html(this.naipe+ ' ' + this.valor);
+    },
+    
+    disableShowButton: function(){
+        $('#botao-ver-carta').addClass('disabled');
+    },
+    enableShowButton: function(){
+        $('#botao-ver-carta').removeClass('disabled');
     }
     
     

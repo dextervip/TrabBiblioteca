@@ -49,11 +49,11 @@
                                 <div class ="thumbnail pagination-centered">
                                     <h2>Baralho</h2>
                                     <div id="carta" naipe="copas" valor="A">
-                                        ?
+                                        <div id="carta-valor" style="margin-top:100px;">?</div>
                                     </div>
                                     <div class ="caption">
                                         <p class="warning">
-                                            <a id="botao-proxima-carta" class="btn btn-primary" href="">Ver Carta</a>
+                                            <a id="botao-ver-carta" class="btn btn-primary" href="">Ver Carta</a>
                                         </p>
                                     </div>
                                 </div>
