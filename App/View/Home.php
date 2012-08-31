@@ -19,14 +19,14 @@
 
                 <div class="pagination-centered">
                     <div class="">
-                        <a class="navbar" href=""><h2> The Game</h2></a>                    
+                        <a class="navbar" href=""><h2> Jogo: Par ou Impar </h2></a>                    
                     </div>
                 </div>
             </div>
-            <div class ="page-header">
-                <h1 class="pagination-centered">Jogo: Par ou Impar</h1>
 
+            <div class ="page-header">
             </div>
+
             <div class ="span12">
                 <div class="pagination-centered">
                     <div class="row-fluid">
