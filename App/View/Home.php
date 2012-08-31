@@ -60,7 +60,6 @@
 
                     <div id="alerta">
                         <div class="alert alert-block alert-error fade in">
-                            <button data-dismiss="alert" class="close" type="button">×</button>
                             <h4 class="alert-heading" id="alerta-titulo">Oh snap! You got an error!</h4>
                             <p id="alerta-texto">Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
                         </div>
