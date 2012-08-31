@@ -1,12 +1,13 @@
 
 <html>
     <head>
+        <meta charset="utf-8" />
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
         <link href="css/jogo.css" rel="stylesheet"/>
         <script src="jquery.js" type="text/javascript" ></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/jogo.js" type="text/javascript"></script>
+        <script src="js/jogo.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript">
             var baseUrl = "<?= APPLICATION_PATH ?>";
         </script>
