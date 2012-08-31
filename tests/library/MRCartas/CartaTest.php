@@ -83,7 +83,7 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * Testa os valores com dados que não são os valores normais das cartas 
-     * 
+     * @expectedException \MRCartas\BaralhoException
      * @author Helison
      */
     public function testGetSetValorWithWrongValues() {
@@ -94,7 +94,6 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
              * Carta.php, acessa o método 'setValor' 
              * e define por paramêtro a string $value.
              */
-            try {
                 $this->object->setValor($value);
 
                 /**
@@ -102,10 +101,7 @@ class CartaTest extends \PHPUnit_Framework_TestCase {
                  * de $value.
                  */
                 $this->assertEquals($this->object->getValor(), $value);
-            } catch (InvalidArgumentException $expected) {
-                return;
-            }
-            $this->fail('Nao ocorreu execeção.');
+            
         }
     }
 
