@@ -73,7 +73,12 @@ class Carta {
     public function setValor($valor) {
         $this->valor = $valor;
     }
-    
+
+    /**
+     * 
+     * @return boolean
+     * @throws \MRCartas\BaralhoException
+     */
     public function isPar() {
         $valor = $this->getValor();
         if (is_numeric($valor)) {
@@ -83,31 +88,35 @@ class Carta {
                 case 'A':
                     return false;
                     break;
-                
+
                 case 'J':
                     return false;
                     break;
-                
+
                 case 'Q':
                     return true;
                     break;
-                
+
                 case 'K':
                     return false;
                     break;
-                
+
                 default:
                     throw new \MRCartas\BaralhoException(\MRCartas\BaralhoException::PARAMETRO_INVALIDO);
                     break;
             }
         }
     }
-    
+
+    /**
+     * 
+     * @return type
+     */
     public function isImpar() {
         $impar = !$this->isPar();
         return $impar;
     }
-    
+
     /**
      * Retorna a carta em string
      * 

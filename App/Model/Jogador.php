@@ -16,7 +16,7 @@ class Jogador {
     private $cartas;
 
     /**
-     * 
+     * Construções e pre-definições da classe
      * @param type $id
      */
     public function __construct($id = null) {
