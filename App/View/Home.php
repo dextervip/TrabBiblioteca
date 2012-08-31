@@ -14,25 +14,12 @@
     <body>
 
         <div class ="container">
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <div class="container">
 
-                        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
+            <div class="navbar-inner">
 
-                        <!-- Be sure to leave the brand out there if you want it shown -->
-                        <a class="brand" href="#">The Game</a>
-
-                        <!-- Everything you want hidden at 940px or less, place within here -->
-                        <div class="nav-collapse">
-                            <!-- .nav, .navbar-search, .navbar-form, etc -->
-                        </div>
-
+                <div class="pagination-centered">
+                    <div class="">
+                        <a class="navbar" href=""><h2> The Game</h2></a>                    
                     </div>
                 </div>
             </div>
@@ -63,12 +50,13 @@
                                     <h1>
                                         Descarte
                                     </h1>
+                                    <span id="num-cartas-descarte">0</span>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <br />
-                    
+
                     <div id="alerta">
                         <div class="alert alert-block alert-error fade in">
                             <button data-dismiss="alert" class="close" type="button">×</button>
@@ -76,9 +64,9 @@
                             <p id="alerta-texto">Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
                         </div>
                     </div>
-                    
+
                     <div class="alert alert-info">
-                        Vez do jogador: <span id="jogadorAtual">Jogador 1</span>
+                        Vez do jogador: <span id="jogadorAtual">Jogador <span id="idJogadorAtual">1</span> </span>
                     </div>
                     <div class ="btn-group" style="margin: 0 auto;">
                         <button id="botao-iniciar-jogo" class="btn btn-primary">Novo Jogo</button>
@@ -89,7 +77,7 @@
                 <div class="span2"> </div>
                 <div class="span5 well">
                     <h2>Jogador 1</h2>
-                    <span>Quantidade de Cartas: <span class="badge">0</span></span>
+                    <span>Quantidade de Cartas: <span id="num-cartas-1" class="badge">0</span></span>
                     <br />
                     <br />
                     <div class="btn-group">
@@ -97,9 +85,9 @@
                         <button class="btn btn-large" type="button" id="botao-impar-1">Impar</button>
                     </div>
                 </div>
-                <div class="span5 well">
+                <div class="span5 well escurecer">
                     <h2>Jogador 2</h2>
-                    <span>Quantidade de Cartas: <span class="badge">0</span></span>
+                    <span>Quantidade de Cartas: <span id="num-cartas-2" class="badge">0</span></span>
                     <br />
                     <br />
                     <div class="btn-group">
