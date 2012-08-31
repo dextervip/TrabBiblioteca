@@ -209,7 +209,7 @@ var Jogo = {
             Alerta.changeValues('Jogador 2 Vencedor', 'O jogador 2 ganhou!');
         }
         
-    },
+    }
     
 }
 
