@@ -96,7 +96,24 @@ class JogoApp {
             }
         }
 
-        throw new Exception('rota não encontrada');
+        throw new Exception('
+           <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+                <html lang="pt-br">
+                    <head>
+                        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+                    </head>
+                      <body>
+                        <div> 
+                            <center>
+                                 <a><img src=' . '"img/error404.jpg"' . '></a>
+                            </center>
+                            <center>
+                            ' . '<b>Rota não Encontrada!</b>
+                            </center>
+                        </div>
+             </body>
+           </html>');
     }
 
 }
