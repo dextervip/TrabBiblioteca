@@ -16,7 +16,7 @@ class Jogador {
     private $cartas;
 
     /**
-     * 
+     * Construções e pre-definições da classe
      * @param type $id
      */
     public function __construct($id = null) {
@@ -25,15 +25,15 @@ class Jogador {
     }
 
     /**
-     * 
-     * @return type
+     * Função para obter o ID
+     * @return id
      */
     public function getId() {
         return $this->id;
     }
 
     /**
-     * 
+     * Função para definir o ID
      * @param type $id
      */
     public function setId($id) {
@@ -41,15 +41,15 @@ class Jogador {
     }
 
     /**
-     * 
-     * @return type
+     * Função para obter a escolha
+     * @return escolha
      */
     public function getEscolha() {
         return $this->escolha;
     }
 
     /**
-     * 
+     * Função para definir a escolha
      * @param type $escolha
      */
     public function setEscolha($escolha) {
@@ -57,15 +57,15 @@ class Jogador {
     }
 
     /**
-     * 
-     * @return type
+     * Função para obter as cartas
+     * @return cartas
      */
     public function getCartas() {
         return $this->cartas;
     }
 
     /**
-     * 
+     * Função para definir as cartas
      * @param \MRCartas\Baralho $cartas
      */
     public function setCartas($cartas) {
@@ -73,7 +73,7 @@ class Jogador {
     }
 
     /**
-     * 
+     * Função para adicionar as cartas
      * @param \MRCartas\Baralho $cartas
      */
     public function addCartas($cartas) {
@@ -81,8 +81,8 @@ class Jogador {
     }
 
     /**
-     * 
-     * @return type
+     * Funão para obter o número de cartas
+     * @return número de cartas no baralho
      */
     public function count() {
         return $this->cartas->count();

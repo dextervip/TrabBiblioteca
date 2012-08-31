@@ -16,6 +16,7 @@ class JogoApp {
     private $rotas;
 
     /**
+     * Função para as definições da rotas do sistema
      * 
      * @param type $rota
      * @param type $acao
@@ -35,6 +36,7 @@ class JogoApp {
     }
 
     /**
+     * Função para as definições da rotas do sistema
      * 
      * @param type $rota
      * @param type $acao
@@ -45,6 +47,7 @@ class JogoApp {
     }
 
     /**
+     * Função para as definições da rotas do sistema
      * 
      * @param type $acao
      * @throws Exception
@@ -55,6 +58,7 @@ class JogoApp {
     }
 
     /**
+     * Função para as definições da rotas do sistema
      * 
      * @param type $url
      */
@@ -73,6 +77,7 @@ class JogoApp {
     }
 
     /**
+     * Função para as definições da rotas do sistema
      * 
      * @param type $url
      * @param type $method
