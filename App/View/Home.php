@@ -98,7 +98,7 @@
                         <button class="btn btn-large" type="button" id="botao-impar-1">Impar</button>
                     </div>
                 </div>
-                <div class="span5 well escurecer">
+                <div class="span5 well">
                     <h2>Jogador 2</h2>
                     <span>Quantidade de Cartas: <span id="num-cartas-2" class="badge">0</span></span>
                     <br />

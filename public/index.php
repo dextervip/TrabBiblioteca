@@ -84,7 +84,7 @@ $jogoApp->get('/impar', function () use($session) {
 $jogoApp->get('/get-jogador-atual', function () use($session) {
             $jogador = $session->jogo->getJogador();
             echo Zend_Json_Encoder::encode(array(
-                'id' => $jogador->getId(),
+                'idJogadorAtual' => $jogador->getId(),
                 'numCartas' => $jogador->count()));
         });
 

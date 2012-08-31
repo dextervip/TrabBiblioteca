@@ -24,19 +24,8 @@ $(document).ready(function() {
             return;
         }
         $(this).addClass('disabled');
-        $.ajax({
-            context: this,
-            async: false,
-            url: baseUrl+'novo-jogo',
-            success: function(data) {
-                //alert('Você clicou em proxima carta: '+ data);
-                Placar.fetchFromServer();
-                Placar.update();
-                Alerta.changeValues("Novo Jogo", "O novo jogo foi iniciado!");
-                Alerta.show();
-                $(this).removeClass('disabled');
-            }
-        });
+        Jogo.novoJogo();
+        $(this).removeClass('disabled');
     });
     
     
@@ -80,6 +69,34 @@ var Placar = {
 
 var Jogo = {
     
+    novoJogo: function(){
+        $.ajax({
+            async: false,
+            url: baseUrl+'novo-jogo',
+            success: function(data) {
+                //alert('Você clicou em proxima carta: '+ data);
+                Placar.fetchFromServer();
+                Placar.update();
+                Alerta.changeValues("Novo Jogo", "O novo jogo foi iniciado!");
+                Alerta.show();
+                Jogo.habilitarJogador1();
+            }
+        });
+    },
+    
+    getJogadorAtual : function(){
+        var obj;
+        $.ajax({
+            async: false,
+            url: baseUrl+'get-jogador-atual',
+            success: function(data) {
+                obj = jQuery.parseJSON(data);
+                
+            }
+        });
+        return obj.idJogadorAtual;
+    },
+    
     habilitarJogador1: function(){
         $('#botao-par-1').removeClass('disabled');
         $('#botao-impar-1').removeClass('disabled');
@@ -93,7 +110,7 @@ var Jogo = {
         
         $('#botao-par-2').removeClass('disabled');
         $('#botao-impar-2').removeClass('disabled');
-         $('#botao-par-2').parent().parent().removeClass('escurecer');
+        $('#botao-par-2').parent().parent().removeClass('escurecer');
         
         $('#botao-par-1').addClass('disabled');
         $('#botao-impar-1').addClass('disabled');
