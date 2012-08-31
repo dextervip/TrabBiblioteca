@@ -8,12 +8,26 @@ $(document).ready(function() {
     
     $(".alert").alert();
     $("div#alerta").hide();
-  
-    $("#botao-ver-carta").click(function(e){
+    
+    $('.botao-par').click(function(e){
         if($(this).hasClass('disabled') == true) {
             return;
         }
+        Jogo.selecionarPar();
+    });
+    
+    $('.botao-impar').click(function(e){
+        if($(this).hasClass('disabled') == true) {
+            return;
+        }
+        Jogo.selecionarImpar();
+    });
+  
+    $("#botao-ver-carta").click(function(e){
         e.preventDefault();
+        if($(this).hasClass('disabled') == true) {
+            return;
+        }
         Jogo.pegarCarta();
     });
     
@@ -62,6 +76,10 @@ var Placar = {
         $('#cartas-restantes').html(this.baralho);
         $('#num-cartas-descarte').html(this.descarte);
         $('span#idJogadorAtual').html(this.jogadorAtual);
+        
+        if(this.baralho == 0){
+            Jogo.fim();
+        }
     }
     
 }
@@ -88,15 +106,27 @@ var Jogo = {
     pegarCarta: function(){
         $.ajax({
             async: false,
+            context: this,
             url: baseUrl+'pegar-carta',
             success: function(data) {
                 //alert('Você clicou em proxima carta: '+ data);
                 var obj = jQuery.parseJSON(data);
                 Carta.changeValues(obj.naipe, obj.valor);
+                Carta.show();
                 Alerta.changeValues('Resultado', obj.mensagem)
                 Alerta.show();
                 Placar.fetchFromServer();
                 Placar.update();
+                
+                if(this.getJogadorAtual() == 1){
+                    this.habilitarJogador1();
+                }else if(this.getJogadorAtual() == 2){
+                    this.habilitarJogador2();
+                }
+                Carta.disableShowButton();
+                setTimeout(function(){
+                    Carta.reset();
+                },3000);
             }
         });
     },
@@ -132,6 +162,53 @@ var Jogo = {
         $('#botao-par-1').addClass('disabled');
         $('#botao-impar-1').addClass('disabled');
         $('#botao-par-1').parent().parent().addClass('escurecer');
+    },
+    
+    desativarJogares: function(){
+        $('#botao-par-2').addClass('disabled');
+        $('#botao-impar-2').addClass('disabled');
+        $('#botao-par-2').parent().parent().addClass('escurecer');
+        $('#botao-par-1').addClass('disabled');
+        $('#botao-impar-1').addClass('disabled');
+        $('#botao-par-1').parent().parent().addClass('escurecer');
+    },
+    
+    selecionarImpar : function(){
+        $.ajax({
+            async: false,
+            url: baseUrl+'impar',
+            success: function(data) {
+                Alerta.changeValues('Seleção Impar', 'Você selecinou o valor impar');
+                Alerta.show(); 
+                Carta.enableShowButton();
+            }
+        });
+    },
+    
+    selecionarPar : function(){
+        $.ajax({
+            async: false,
+            url: baseUrl+'par',
+            success: function(data) {
+                Alerta.changeValues('Seleção Par', 'Você selecinou o valor par');
+                Alerta.show(); 
+                Carta.enableShowButton();
+            }
+        });
+    },
+    
+    fim: function(){
+        Carta.disableShowButton();
+        this.desativarJogares();
+        
+        if(Placar.jogador1 == Placar.jogador2){
+            Alerta.changeValues('Empate', 'Ninguem ganhou o jogo!!!!');
+        }else if(Placar.jogador1 > Placar.jogador2){
+            Alerta.changeValues('Jogador 1 Vencedor', 'O jogador 1 ganhou!');
+        }else if(Placar.jogador1 < Placar.jogador2){
+            Alerta.changeValues('Jogador 2 Vencedor', 'O jogador 2 ganhou!');
+        }
+        
     }
     
 }
@@ -161,6 +238,7 @@ var Carta = {
     enableShowButton: function(){
         $('#botao-ver-carta').removeClass('disabled');
     }
+    
     
     
 }

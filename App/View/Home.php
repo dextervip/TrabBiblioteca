@@ -81,8 +81,8 @@
                     <br />
                     <br />
                     <div class="btn-group">
-                        <button class="btn btn-large btn-primary" type="button" id="botao-par-1">Par</button>
-                        <button class="btn btn-large" type="button" id="botao-impar-1">Impar</button>
+                        <button id="botao-par-1" class="btn btn-large btn-primary botao-par" type="button">Par</button>
+                        <button id="botao-impar-1" class="btn btn-large botao-impar" type="button">Impar</button>
                     </div>
                 </div>
                 <div class="span5 well">
@@ -91,8 +91,8 @@
                     <br />
                     <br />
                     <div class="btn-group">
-                        <button class="btn btn-large btn-primary" type="button" id="botao-par-2">Par</button>
-                        <button class="btn btn-large" type="button" id="botao-impar-2">Impar</button>
+                        <button id="botao-par-2" class="btn btn-large btn-primary botao-par" type="button">Par</button>
+                        <button id="botao-impar-2" class="btn btn-large botao-impar" type="button">Impar</button>
                     </div>
                 </div>
             </div>
