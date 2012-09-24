@@ -1,7 +1,7 @@
 <?php
 
 $url_request = $_SERVER['REQUEST_URI'];
-define('APPLICATION_PATH', $_SERVER['APPLICATION_PATH']);
+define('APPLICATION_PATH', str_replace('index.php', '', $_SERVER['SCRIPT_NAME']));
 define('APPLICATION_URL', 'http://' . $_SERVER['HTTP_HOST']);
 
 $url = '/' . substr_replace($url_request, '', 0, strlen(APPLICATION_PATH));
